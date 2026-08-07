@@ -1,253 +1,459 @@
 <!DOCTYPE html><html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#1B1A16">
+<meta name="theme-color" content="#FFF6E8">
+<meta name="description" content="La Popote — quatre semaines de vrais dîners familiaux, simples, rapides et riches en protéines.">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<title>Menus — 4 semaines</title>
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>La Popote — 4 semaines de menus</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Karla:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{
-  --paper:#F5F4F0; --ink:#1B1A16; --muted:#6E6A5E; --rule:#DEDACE; --card:#FFFDF9;
-  --ok:#2F6B4F; --warn:#B44A3E;
-  --disp:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;
-  --body:'Karla','Segoe UI',system-ui,sans-serif;
-  --mono:'JetBrains Mono','SFMono-Regular',Consolas,monospace;
-  --nav:64px; --top:92px;
+  --cream:#FFF6E8; --card:#FFFDF7; --ink:#3F2E23; --muted:#7A6759; --line:#EBDCC6;
+  --coral:#EA5228; --coral-d:#C8431F; --sun:#FFC64B; --leaf:#3E9E63; --leaf-d:#2F7F4E;
+  --berry:#C2334D; --sky:#5FA8DC;
+  --disp:'Baloo 2','Comic Sans MS',cursive; --body:'Nunito','Trebuchet MS',sans-serif;
+  --sh:0 4px 0 var(--ink); --sh-sm:0 3px 0 var(--ink);
+  --r:20px; --nav:72px; --top:96px;
 }
-html{-webkit-text-size-adjust:100%}
-body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:
+  radial-gradient(1100px 480px at 88% -120px,rgba(255,198,75,.22),transparent 60%),
+  radial-gradient(900px 460px at -8% 60px,rgba(244,99,60,.12),transparent 55%),
+  radial-gradient(rgba(63,46,35,.05) 1.5px,transparent 1.5px) 0 0/26px 26px,
+  var(--cream);
+  color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
   -webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3,h4{font-family:var(--disp);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+h1,h2,h3,h4{font-family:var(--disp);font-weight:800;letter-spacing:-.01em;line-height:1.12}
 button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
-.eyebrow{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.shell{max-width:620px;margin:0 auto;padding:0 16px calc(var(--nav) + 40px)}
+img{max-width:100%}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.eyebrow{font-family:var(--body);font-weight:900;font-size:11px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--coral-d)}
+.shell{max-width:660px;margin:0 auto;padding:0 16px 34px}
 
-/* ---------------- top ---------------- */
-.top{position:sticky;top:0;z-index:40;background:var(--ink);color:var(--paper);
-  margin:0 -16px;padding:12px 16px 0;box-shadow:0 1px 0 rgba(0,0,0,.2)}
-.top-row{display:flex;align-items:center;gap:10px;padding-bottom:11px}
-.top-row .lab{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.55}
-.top-row .ttl{font-family:var(--disp);font-weight:800;font-size:14px;margin-left:auto;opacity:.9;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:52%}
-.gear{flex:0 0 30px;height:30px;display:flex;align-items:center;justify-content:center;
-  border-radius:4px;background:rgba(255,255,255,.09)}
-.gear svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8}
-.weeks{display:flex;gap:6px;padding-bottom:11px}
-.wk{flex:1;padding:9px 4px;border-radius:3px;background:rgba(255,255,255,.09);position:relative;
-  font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-align:center;transition:background .15s}
-.wk[aria-current="true"]{background:var(--paper);color:var(--ink);font-weight:500}
-.wk em{position:absolute;top:4px;right:5px;width:6px;height:6px;border-radius:50%;background:var(--ok);display:none}
+/* ================= header ================= */
+.top{position:sticky;top:0;z-index:40;background:rgba(255,246,232,.94);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-bottom:2px solid var(--ink)}
+.hwrap{max-width:1120px;margin:0 auto;padding:10px 16px 0}
+.tbar{display:flex;align-items:center;gap:14px;padding-bottom:10px}
+.logo{display:flex;align-items:center;gap:9px;min-width:0}
+.logo svg{width:34px;height:34px;flex:0 0 auto}
+.lname{font-family:var(--disp);font-weight:800;font-size:21px;line-height:1;white-space:nowrap}
+.lname small{display:block;font-family:var(--body);font-weight:800;font-size:9px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.gear{margin-left:auto;flex:0 0 42px;height:42px;display:flex;align-items:center;justify-content:center;
+  border:2px solid var(--ink);border-radius:14px;background:var(--card);box-shadow:var(--sh-sm);
+  transition:transform .15s,box-shadow .15s}
+.gear:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
+.gear svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.9}
+
+/* desktop nav */
+.dnav{display:none;align-items:center;gap:6px;margin-left:auto}
+.dnav button{position:relative;display:flex;align-items:center;gap:8px;padding:9px 15px;
+  border-radius:999px;font-family:var(--disp);font-weight:700;font-size:15px;color:var(--ink);
+  border:2px solid transparent;transition:background .15s,transform .15s}
+.dnav button:hover{background:rgba(63,46,35,.07)}
+.dnav button svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.9;
+  stroke-linecap:round;stroke-linejoin:round}
+.dnav button[aria-current="true"]{background:var(--sun);border-color:var(--ink);
+  box-shadow:var(--sh-sm)}
+.dnav button[aria-current="true"]:hover{background:#F5B93A}
+
+/* week pills */
+.weeks{display:flex;align-items:center;gap:8px;padding-bottom:12px}
+.wk{flex:1;position:relative;padding:9px 6px;border:2px solid var(--ink);border-radius:999px;
+  background:var(--card);font-family:var(--disp);font-weight:700;font-size:14px;
+  transition:transform .15s,background .15s,box-shadow .15s}
+.wk:hover{background:#FFF1D6}
+.wk[aria-current="true"]{background:var(--sun);box-shadow:var(--sh-sm)}
+.wk:active{transform:translateY(2px)}
+.wk i{font-style:normal}
+.wk b{display:none;font-weight:700}
+.wk em{position:absolute;top:-4px;right:2px;width:14px;height:14px;border-radius:50%;
+  background:var(--leaf);border:2px solid var(--ink);display:none;
+  color:#fff;font-style:normal;font-size:8px;line-height:10px;text-align:center}
 .wk[data-full="1"] em{display:block}
+.wk em::before{content:"✓"}
+.wtitle{display:none;margin-left:auto;font-family:var(--disp);font-weight:700;font-size:15px;
+  color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:300px}
 
-/* ---------------- nav ---------------- */
-.nav{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--card);
-  border-top:1.5px solid var(--ink);display:flex;padding-bottom:env(safe-area-inset-bottom)}
-.nav button{flex:1;padding:9px 2px 8px;display:flex;flex-direction:column;align-items:center;gap:3px;
-  color:var(--muted);position:relative}
-.nav button svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.7;
-  stroke-linecap:round;stroke-linejoin:round}
-.nav button span.t{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase}
-.nav button[aria-current="true"]{color:var(--ink)}
-.nav button[aria-current="true"]::before{content:"";position:absolute;top:0;left:22%;right:22%;
-  height:2.5px;background:var(--ink)}
-.badge{position:absolute;top:5px;right:calc(50% - 22px);background:var(--warn);color:#fff;
-  font-family:var(--mono);font-size:9px;min-width:16px;height:16px;border-radius:9px;
-  display:none;align-items:center;justify-content:center;padding:0 4px}
+/* ================= mobile nav ================= */
+.mnav{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--card);
+  border-top:2px solid var(--ink);display:flex;padding-bottom:env(safe-area-inset-bottom)}
+.mnav button{flex:1;padding:10px 2px 9px;display:flex;flex-direction:column;align-items:center;gap:3px;
+  color:var(--muted);position:relative;transition:color .15s}
+.mnav button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round;transition:transform .18s}
+.mnav button .t{font-family:var(--disp);font-weight:700;font-size:10.5px;letter-spacing:.02em}
+.mnav button[aria-current="true"]{color:var(--coral-d)}
+.mnav button[aria-current="true"] svg{transform:translateY(-1px) scale(1.08)}
+.mnav button[aria-current="true"]::before{content:"";position:absolute;top:0;left:26%;right:26%;
+  height:3.5px;border-radius:0 0 4px 4px;background:var(--coral)}
+.badge{position:absolute;top:3px;right:calc(50% - 24px);background:var(--berry);color:#fff;
+  font-family:var(--disp);font-weight:700;font-size:10px;min-width:17px;height:17px;
+  border-radius:9px;border:1.5px solid var(--ink);display:none;align-items:center;
+  justify-content:center;padding:0 4px;line-height:1}
 .badge.on{display:flex}
-.badge.ok{background:var(--ok)}
+.badge.ok{background:var(--leaf-d)}
+.dnav .badge{position:static;margin-left:2px;border-color:var(--ink)}
 
-/* ---------------- views ---------------- */
-.view{padding-top:22px;animation:fade .22s ease}
-@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
-.vhead h2{font-size:26px;margin:5px 0 7px}
-.vhead p{font-size:14.5px;color:var(--muted)}
+/* ================= views ================= */
+.view{padding-top:28px;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.vhead{margin-bottom:4px}
+.vhead h2{font-size:29px;margin:6px 0 8px}
+.vhead h2 u{text-decoration:underline wavy var(--sun);text-decoration-thickness:3.5px;
+  text-underline-offset:7px}
+.vhead p{font-size:15px;line-height:1.62;color:var(--muted);max-width:560px}
 
-/* progress row (shared) */
-.prow{display:flex;align-items:center;gap:10px;margin:16px 0 18px}
-.track{flex:1;height:5px;background:var(--rule);border-radius:3px;overflow:hidden}
-.track i{display:block;height:100%;background:var(--ink);width:0;transition:width .25s}
-.track.g i{background:var(--ok)}
-.prow .c{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap}
-.prow .rst{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--muted);border:1px solid var(--rule);border-radius:3px;padding:6px 9px;white-space:nowrap}
-.prow .rst:disabled{opacity:.35}
+/* progress row */
+.prow{display:flex;align-items:center;flex-wrap:wrap;gap:11px;margin:20px 0 24px}
+.track{flex:1;min-width:130px;height:12px;background:#F3E7D2;border:2px solid var(--ink);border-radius:999px;overflow:hidden}
+.track i{display:block;height:100%;background:linear-gradient(90deg,var(--coral),var(--sun));
+  border-radius:999px;width:0;transition:width .3s cubic-bezier(.3,.8,.4,1)}
+.track.g i{background:linear-gradient(90deg,var(--leaf),#7FD49A)}
+.prow .c{font-family:var(--disp);font-weight:700;font-size:13.5px;color:var(--muted);white-space:nowrap}
+.prow .fete{font-family:var(--disp);font-weight:700;font-size:12px;background:var(--sun);
+  border:2px solid var(--ink);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.prow .rst{font-family:var(--disp);font-weight:700;font-size:12px;color:var(--muted);
+  border:2px solid var(--line);border-radius:999px;padding:6px 12px;white-space:nowrap;
+  transition:border-color .15s,color .15s}
+.prow .rst:not(:disabled):hover{border-color:var(--ink);color:var(--ink)}
+.prow .rst:disabled{opacity:.4;cursor:default}
 
-/* ---------------- tonight ---------------- */
-.tonight{background:var(--ink);color:var(--paper);border-radius:4px;padding:15px 17px;margin-bottom:18px;
-  display:block;width:100%;text-align:left}
-.tonight .k{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;
-  text-transform:uppercase;opacity:.55}
-.tonight .n{display:block;font-family:var(--disp);font-weight:800;font-size:19px;margin:6px 0 8px;line-height:1.15}
-.tonight .m{display:block;font-family:var(--mono);font-size:11px;opacity:.72}
-.tonight.done .n{opacity:.55}
+/* ================= tonight hero ================= */
+.tonight{position:relative;display:block;width:100%;text-align:left;background:var(--coral);
+  color:#FFF8EF;border:2px solid var(--ink);border-radius:var(--r);box-shadow:var(--sh);
+  padding:22px;margin-bottom:26px;overflow:hidden;
+  transition:transform .18s,box-shadow .18s}
+.tonight:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--ink)}
+.tonight:active{transform:translateY(2px);box-shadow:0 2px 0 var(--ink)}
+.tonight::after{content:"🍽️";position:absolute;right:-6px;bottom:-14px;font-size:74px;
+  opacity:.18;transform:rotate(-10deg)}
+.tonight .k{display:inline-block;background:var(--ink);color:var(--cream);font-weight:900;
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
+.tonight .n{display:block;font-family:var(--disp);font-weight:800;font-size:23px;
+  margin:11px 0 12px;line-height:1.18}
+.tonight .m{display:inline-block;background:rgba(255,248,239,.94);color:var(--ink);
+  font-weight:800;font-size:12.5px;padding:4px 12px;border-radius:999px}
+.tonight .go{display:inline-flex;margin-top:15px;background:#FFF8EF;color:var(--coral-d);
+  font-family:var(--disp);font-weight:700;font-size:12.5px;border:2px solid var(--ink);
+  border-radius:999px;padding:5px 13px;box-shadow:0 2px 0 var(--ink)}
+.tonight.done{background:var(--leaf-d)}
+.tonight.done .go{color:var(--leaf-d)}
+.tonight .ph{display:none}
 
-/* ---------------- day ---------------- */
-.day{background:var(--card);border:1.5px solid var(--ink);border-radius:4px;margin-bottom:10px;overflow:hidden}
-.day.now{box-shadow:0 0 0 3px rgba(27,26,22,.14)}
-.day.done{opacity:.62}
+/* ================= day cards ================= */
+.day{background:var(--card);border:2px solid var(--ink);border-radius:var(--r);
+  box-shadow:var(--sh);margin-bottom:19px;overflow:hidden;
+  transition:transform .18s,box-shadow .18s,opacity .2s}
+@media(hover:hover){.day:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--ink)}}
+.day.now{outline:3px solid var(--sun);outline-offset:3px}
+.day.done{opacity:.78}
 .dhead{display:flex;align-items:stretch}
-.dbar{flex:0 0 9px;background:var(--cbg)}
-.dtoggle{flex:1;min-width:0;display:flex;align-items:center;text-align:left}
-.dmain{flex:1;min-width:0;padding:14px 4px 14px 13px}
-.drow{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
-.dday{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--cink)}
-.dtag{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
-  background:var(--cchip);color:var(--cink);padding:3px 7px;border-radius:2px}
-.dok{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
-  background:var(--ok);color:#fff;padding:3px 7px;border-radius:2px;display:none}
+.dtoggle{flex:1;min-width:0;display:grid;grid-template-columns:64px 1fr auto;
+  grid-template-areas:"thumb main main" "meta meta chev";column-gap:13px;row-gap:13px;
+  align-items:center;text-align:left;padding:16px 12px 15px 15px}
+.dthumb{grid-area:thumb;position:relative;width:64px;height:64px;border:2px solid var(--ink);border-radius:16px;
+  background:var(--cchip);overflow:hidden;display:flex;align-items:center;justify-content:center;
+  transform:rotate(-2deg);transition:transform .2s}
+.day[data-open="1"] .dthumb,.dtoggle:hover .dthumb{transform:rotate(0) scale(1.04)}
+.dthumb::before{content:var(--emo);font-size:26px}
+.dthumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dmain{grid-area:main;min-width:0}
+.drow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.dday{font-weight:900;font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--cink)}
+.dtag{font-weight:800;font-size:10px;letter-spacing:.06em;text-transform:uppercase;
+  background:var(--cchip);color:var(--cink);border:1.5px solid var(--crule);
+  padding:2px 9px;border-radius:999px}
+.dok{font-weight:800;font-size:10px;letter-spacing:.06em;text-transform:uppercase;
+  background:var(--leaf-d);color:#fff;border:1.5px solid var(--ink);
+  padding:2px 9px;border-radius:999px;display:none}
 .day.done .dok{display:inline-block}
-.dnom{display:block;font-family:var(--disp);font-weight:800;font-size:17px;line-height:1.2;margin:7px 0 8px}
-.day.done .dnom{text-decoration:line-through;text-decoration-thickness:1.5px}
-.dmeta{display:flex;gap:6px;flex-wrap:wrap}
-.dmeta i{font-style:normal;font-family:var(--mono);font-size:10.5px;border:1px solid var(--crule);
-  color:var(--cink);padding:3px 8px;border-radius:2px}
+.dnom{display:block;font-family:var(--disp);font-weight:800;font-size:18px;line-height:1.28;margin:8px 0 0}
+.day.done .dnom{text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:var(--leaf)}
+.dmeta{grid-area:meta;display:flex;gap:7px;flex-wrap:nowrap;min-width:0}
+.dmeta i{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.dmeta i{font-style:normal;font-weight:800;font-size:11px;border:1.5px solid var(--crule);
+  color:var(--cink);padding:2px 9px;border-radius:999px;background:var(--card)}
 .dmeta i.p{background:var(--cink);color:var(--card);border-color:var(--cink)}
-.chev{flex:0 0 26px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
-.chev svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .22s}
+.chev{grid-area:chev;justify-self:end;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.chev svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.4;
+  stroke-linecap:round;stroke-linejoin:round;transition:transform .25s}
 .day[data-open="1"] .chev svg{transform:rotate(180deg)}
-.dcook{flex:0 0 54px;border-left:1px solid var(--rule);display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:4px;color:#A9A496}
-.dcook svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.4;
+.dcook{flex:0 0 58px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:4px;border-left:2px dashed var(--line);color:var(--muted);transition:color .15s}
+.dcook:hover{color:var(--ink)}
+.dcook b{width:34px;height:34px;border:2px solid currentColor;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s,transform .15s}
+.dcook svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:3;
   stroke-linecap:round;stroke-linejoin:round}
-.dcook em{font-style:normal;font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase}
-.day.done .dcook{background:var(--ok);color:#fff;border-left-color:var(--ok)}
-.dpanel{display:none;padding:2px 16px 18px;border-top:1px dashed var(--rule);margin:0 13px 0 22px}
-.day[data-open="1"] .dpanel{display:block}
+.dcook em{font-style:normal;font-weight:800;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase}
+.day.done .dcook{color:var(--leaf-d)}
+.day.done .dcook b{background:var(--leaf);border-color:var(--ink);color:#fff}
+.dcook.pop b{animation:pop .4s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{0%{transform:scale(.6)}60%{transform:scale(1.25)}100%{transform:scale(1)}}
 .day[data-open="1"]{opacity:1}
-.dimg{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;border:1.5px solid var(--crule);border-radius:3px;margin-top:15px}
+.dpanel{display:none;padding:6px 18px 24px;border-top:2px dashed var(--line);margin-top:2px}
+.day[data-open="1"] .dpanel{display:block}
+.dimg{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;border:2px solid var(--ink);
+  border-radius:16px;margin-top:16px;box-shadow:var(--sh-sm)}
 
-.bars{display:flex;gap:3px;margin:15px 0 4px}
-.bar{background:var(--cchip);border:1px solid var(--crule);border-radius:2px;padding:5px 7px;min-width:0;overflow:hidden}
-.bar b{display:block;font-size:10.5px;color:var(--cink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.bar i{font-style:normal;font-family:var(--mono);font-size:8.5px;color:var(--cink);opacity:.7}
-.par{font-size:11.5px;color:var(--muted);font-style:italic;margin-top:6px}
+/* chrono bars */
+.bars{display:flex;gap:5px;margin:14px 0 4px}
+.bar{background:var(--cchip);border:1.5px solid var(--crule);border-radius:10px;
+  padding:6px 8px;min-width:0;overflow:hidden}
+.bar b{display:block;font-size:11px;font-weight:800;color:var(--cink);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar i{font-style:normal;font-weight:700;font-size:9.5px;color:var(--cink);opacity:.75}
+.par{font-size:12px;color:var(--muted);font-style:italic;margin-top:7px}
 @media(max-width:560px){
-  .bars{flex-direction:column;gap:4px}
-  .bar{flex:0 0 auto!important;width:var(--w);min-width:135px;display:flex;gap:9px;
-    align-items:baseline;padding:7px 10px}
-  .bar b{flex:1;white-space:nowrap}
+  .bars{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .bar{display:flex;gap:8px;align-items:baseline;padding:8px 11px}
+  .bar b{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar:last-child:nth-child(odd){grid-column:1/-1}
 }
-.blk{margin-top:17px}
-.blk>h4{font-family:var(--mono);font-weight:400;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:6px;margin-bottom:9px}
+.blk{margin-top:22px}
+.blk>h4{font-family:var(--body);font-weight:900;font-size:10.5px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--line);
+  padding-bottom:8px;margin-bottom:12px}
 ol.steps{list-style:none;counter-reset:s}
-ol.steps li{counter-increment:s;position:relative;padding-left:31px;margin-bottom:10px;font-size:14.5px}
-ol.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:1px;
-  font-family:var(--mono);font-size:10px;color:var(--cink);background:var(--cchip);
-  width:23px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:2px}
+ol.steps li{counter-increment:s;position:relative;padding-left:38px;margin-bottom:14px;font-size:14.5px}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;
+  font-family:var(--disp);font-weight:700;font-size:12.5px;color:var(--cink);
+  background:var(--cchip);border:1.5px solid var(--crule);
+  width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:50%}
 dl.q{display:grid;grid-template-columns:1fr auto;gap:0 10px}
-dl.q dt,dl.q dd{padding:6px 0;border-bottom:1px dotted var(--rule);font-size:14px}
-dl.q dd{font-family:var(--mono);font-size:12.5px;text-align:right;white-space:nowrap;font-weight:500}
-.cookbtn{width:100%;margin-top:18px;padding:13px;border:1.5px solid var(--ink);border-radius:4px;
-  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-  display:flex;align-items:center;justify-content:center;gap:9px}
-.cookbtn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
-.day.done .cookbtn{background:var(--ok);border-color:var(--ok);color:#fff}
+dl.q dt,dl.q dd{padding:8px 0;border-bottom:1.5px dotted var(--line);font-size:14px}
+dl.q dd{font-family:var(--disp);font-weight:700;font-size:13px;text-align:right;white-space:nowrap}
+.cookbtn{width:100%;margin-top:20px;padding:13px;border:2px solid var(--ink);border-radius:999px;
+  background:var(--card);box-shadow:var(--sh-sm);font-family:var(--disp);font-weight:700;
+  font-size:14.5px;display:flex;align-items:center;justify-content:center;gap:9px;
+  transition:transform .15s,box-shadow .15s,background .15s}
+.cookbtn:hover{background:#FFF1D6}
+.cookbtn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
+.cookbtn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2.6;
+  stroke-linecap:round;stroke-linejoin:round}
+.day.done .cookbtn{background:var(--leaf-d);color:#fff}
+.day.done .cookbtn:hover{background:#276B41}
 
-/* ---------------- cards ---------------- */
-.card{background:var(--card);border:1.5px solid var(--ink);border-radius:4px;padding:18px 17px;margin-bottom:11px}
-.card h3{font-size:19px}
-.card .sub{font-size:14px;color:var(--muted);margin-top:5px}
-.pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px}
-.pills span{font-family:var(--mono);font-size:10.5px;border:1px solid var(--rule);padding:4px 9px;border-radius:2px}
-.kid{margin-top:13px;padding-top:11px;border-top:1px dashed var(--rule);font-size:13.5px;color:#4B4840}
-.kid b{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+/* ================= cards ================= */
+.card{background:var(--card);border:2px solid var(--ink);border-radius:var(--r);
+  box-shadow:var(--sh);padding:22px 20px;margin-bottom:19px;transition:transform .18s,box-shadow .18s}
+@media(hover:hover){.card:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--ink)}}
+.card h3{font-size:20px}
+.card .sub{font-size:14.5px;color:var(--muted);margin-top:6px}
+.pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.pills span{font-family:var(--disp);font-weight:700;font-size:12px;border:2px solid var(--line);
+  padding:3px 12px;border-radius:999px;background:var(--card)}
+.kid{margin-top:14px;padding:11px 13px;border:2px dashed var(--line);border-radius:14px;
+  font-size:13.5px;color:#6B594B;background:rgba(255,246,232,.6)}
+.kid b{font-weight:900;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
   display:block;color:var(--muted);margin-bottom:3px}
-.card.hi{background:#FBF3D9}
-.legend{display:flex;flex-wrap:wrap;gap:5px;margin:14px 0 4px}
-.legend span{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;
-  padding:5px 9px;border-radius:2px}
-.note{margin-top:20px;font-size:13px;color:var(--muted);line-height:1.55}
+.card.hi{background:#FFF3CF}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 4px}
+.legend span{font-weight:800;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;
+  padding:5px 12px;border-radius:999px;border:1.5px solid rgba(63,46,35,.25)}
+.note{margin-top:26px;font-size:13.5px;color:var(--muted);line-height:1.65;max-width:560px}
 
-/* ---------------- shopping ---------------- */
-.shopbar{position:sticky;top:var(--top);z-index:30;background:var(--paper);margin:0 -16px;
-  padding:12px 16px 11px;border-bottom:1.5px solid var(--ink)}
-.segs{display:flex;gap:6px}
-.seg{flex:1;padding:9px 4px;border:1.3px solid var(--ink);border-radius:3px;font-family:var(--mono);
-  font-size:10.5px;letter-spacing:.05em;text-align:center;text-transform:uppercase}
-.seg[aria-current="true"]{background:var(--ink);color:var(--paper)}
-.shopbar .prow{margin:11px 0 0}
-.ray{margin-top:22px}
-.ray h4{font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--muted);display:flex;gap:8px;align-items:baseline;border-bottom:1.5px solid var(--ink);padding-bottom:7px}
-.ray h4 em{font-style:normal;margin-left:auto;opacity:.75}
-.it{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:12px 2px;
-  border-bottom:1px solid var(--rule)}
-.box{flex:0 0 22px;height:22px;border:1.6px solid #A9A496;border-radius:4px;display:flex;
-  align-items:center;justify-content:center;transition:background .15s,border-color .15s}
-.box svg{width:13px;height:13px;stroke:var(--card);fill:none;stroke-width:2.6;stroke-linecap:round;
+/* ================= shopping ================= */
+.shopbar{position:sticky;top:var(--top);z-index:30;background:rgba(255,246,232,.96);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  margin:14px -16px 0;padding:12px 16px;border-bottom:2px solid var(--ink)}
+.segs{display:flex;gap:8px}
+.seg{flex:1;padding:9px 6px;border:2px solid var(--ink);border-radius:999px;
+  background:var(--card);font-family:var(--disp);font-weight:700;font-size:13px;
+  text-align:center;transition:background .15s,transform .15s,box-shadow .15s}
+.seg:active{transform:translateY(1px)}
+.seg[aria-current="true"]{background:var(--sun);box-shadow:var(--sh-sm)}
+.shopbar .prow{margin:12px 0 0}
+.rays{margin-top:6px}
+.ray{margin-top:28px;break-inside:avoid}
+.ray h4{font-family:var(--disp);font-weight:700;font-size:15px;display:flex;gap:9px;
+  align-items:center;border-bottom:2px solid var(--ink);padding-bottom:8px}
+.ray h4 .emo{font-size:18px}
+.ray h4 em{font-style:normal;margin-left:auto;font-size:11.5px;font-weight:800;
+  font-family:var(--body);color:var(--muted);background:#F3E7D2;border-radius:999px;padding:2px 9px}
+.it{display:flex;align-items:center;gap:13px;width:100%;text-align:left;padding:14px 4px;
+  border-bottom:1.5px dashed var(--line);border-radius:8px;transition:background .12s}
+.it:hover{background:rgba(255,241,214,.6)}
+.box{flex:0 0 26px;height:26px;border:2px solid var(--muted);border-radius:9px;display:flex;
+  align-items:center;justify-content:center;transition:background .15s,border-color .15s,transform .15s}
+.it:active .box{transform:scale(.88)}
+.box svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:3;stroke-linecap:round;
   stroke-linejoin:round;opacity:0;transition:opacity .15s}
-.it .nm{flex:1;font-size:15px}
-.it .qt{font-family:var(--mono);font-size:12.5px;white-space:nowrap;color:var(--muted)}
-.it[aria-pressed="true"] .box{background:var(--ink);border-color:var(--ink)}
+.it .nm{flex:1;font-size:15px;font-weight:600}
+.it .qt{font-family:var(--disp);font-weight:700;font-size:13px;white-space:nowrap;color:var(--muted)}
+.it[aria-pressed="true"] .box{background:var(--leaf);border-color:var(--ink)}
 .it[aria-pressed="true"] .box svg{opacity:1}
-.it[aria-pressed="true"] .nm{text-decoration:line-through;color:#A9A496}
-.it[aria-pressed="true"] .qt{color:#BCB7A8}
+.it[aria-pressed="true"] .nm{text-decoration:line-through;color:var(--muted)}
+.it[aria-pressed="true"] .qt{color:var(--muted)}
 
-/* ---------------- month ---------------- */
-.mrow{display:flex;gap:9px;background:var(--cbg);border-left:3px solid var(--crule);border-radius:2px;
-  padding:10px 12px;margin-bottom:6px;align-items:baseline}
-.mrow.done{opacity:.5}
+/* ================= month ================= */
+.mgrid .card{margin-bottom:16px}
+.mrow{display:flex;gap:10px;background:var(--cbg);border:1.5px solid var(--crule);
+  border-radius:12px;padding:9px 13px;margin-bottom:7px;align-items:baseline}
+.mrow.done{opacity:.55}
 .mrow.done .n{text-decoration:line-through}
-.mrow b{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--cink);
-  flex:0 0 26px;opacity:.75}
+.mrow b{font-weight:900;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--cink);flex:0 0 30px;opacity:.8}
 .mrow .n{flex:1;font-size:13.8px;font-weight:700;line-height:1.3}
-.mrow .g{font-family:var(--mono);font-size:10px;color:var(--cink)}
+.mrow .g{font-family:var(--disp);font-weight:700;font-size:11.5px;color:var(--cink)}
+.gnote{margin-top:12px;font-weight:700;font-size:12px;color:var(--muted)}
 
-/* ---------------- modal ---------------- */
-.modal{position:fixed;inset:0;z-index:80;background:rgba(20,19,15,.55);display:flex;
+/* ================= modal ================= */
+.modal{position:fixed;inset:0;z-index:80;background:rgba(63,46,35,.5);display:flex;
   align-items:flex-end;justify-content:center;padding:16px;
   padding-bottom:calc(16px + env(safe-area-inset-bottom));animation:fade .18s ease}
 .modal[hidden]{display:none}
-.sheet{background:var(--card);border:1.5px solid var(--ink);border-radius:6px;width:100%;max-width:460px;
-  padding:22px 20px 18px;animation:up .24s cubic-bezier(.2,.8,.3,1)}
-@keyframes up{from{transform:translateY(24px);opacity:.4}to{transform:none;opacity:1}}
-.sheet h3{font-size:20px}
+.sheet{background:var(--card);border:2px solid var(--ink);border-radius:24px;width:100%;
+  max-width:470px;padding:24px 22px 18px;box-shadow:0 6px 0 var(--ink);
+  animation:up .28s cubic-bezier(.2,.9,.3,1.1)}
+@keyframes up{from{transform:translateY(28px);opacity:.4}to{transform:none;opacity:1}}
+.sheet h3{font-size:21px}
 .sheet p{font-size:14.5px;color:var(--muted);margin-top:9px}
-.macts{display:flex;gap:8px;margin-top:20px}
-.macts button{flex:1;padding:13px 8px;border-radius:4px;border:1.5px solid var(--ink);
-  font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
-.macts .yes{background:var(--warn);border-color:var(--warn);color:#fff}
-.srow{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--rule);
-  width:100%;text-align:left;font-size:15px}
+.macts{display:flex;gap:9px;margin-top:22px}
+.macts button{flex:1;padding:13px 8px;border-radius:999px;border:2px solid var(--ink);
+  background:var(--card);box-shadow:var(--sh-sm);font-family:var(--disp);font-weight:700;
+  font-size:14px;transition:transform .15s,box-shadow .15s}
+.macts button:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
+.macts .yes{background:var(--berry);border-color:var(--ink);color:#fff}
+.srow{display:flex;align-items:center;gap:13px;padding:14px 2px;border-bottom:1.5px dashed var(--line);
+  width:100%;text-align:left;font-size:15px;font-weight:700;border-radius:10px;transition:background .12s}
+.srow:hover{background:rgba(255,241,214,.6)}
 .srow:last-of-type{border-bottom:none}
-.srow svg{flex:0 0 18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;
+.srow svg{flex:0 0 19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.9;
   stroke-linecap:round;stroke-linejoin:round;color:var(--muted)}
-.srow small{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
-.srow.danger{color:var(--warn)}
-.srow.danger svg{color:var(--warn)}
-.stat{display:block;font-family:var(--mono);font-size:11px;line-height:1.6;background:var(--paper);
-  border:1px solid var(--rule);border-radius:4px;padding:11px 12px;margin:14px 0 4px;color:var(--muted)}
+.srow small{display:block;font-size:12.5px;font-weight:600;color:var(--muted);margin-top:1px}
+.srow.danger{color:var(--berry)}
+.srow.danger svg{color:var(--berry)}
+.stat{display:block;font-family:var(--disp);font-weight:600;font-size:13px;line-height:1.7;
+  background:var(--cream);border:2px dashed var(--line);border-radius:14px;
+  padding:11px 14px;margin:14px 0 4px;color:var(--muted)}
+
+/* ================= footer ================= */
+.foot{max-width:660px;margin:0 auto;padding:0 16px calc(var(--nav) + 30px);
+  text-align:center;font-weight:700;font-size:12.5px;color:var(--muted)}
+
+/* ================= confetti ================= */
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:99;overflow:hidden}
+.confetti i{position:absolute;top:-14px;left:var(--x);width:9px;height:13px;border-radius:2px;
+  animation:cfall var(--t) var(--d) cubic-bezier(.2,.6,.4,1) forwards;opacity:0}
+@keyframes cfall{5%{opacity:1}to{transform:translateY(108vh) rotate(var(--r));opacity:.9}}
+
+/* ================= desktop ================= */
+@media(min-width:880px){
+  :root{--nav:0px}
+  .shell{max-width:1120px;padding:0 28px 46px}
+  .hwrap{padding:12px 28px 0}
+  .mnav{display:none}
+  .dnav{display:flex}
+  .gear{margin-left:6px}
+  .weeks{gap:10px;padding-bottom:14px}
+  .wk{flex:0 0 auto;padding:8px 20px}
+  .wk i{display:none}
+  .wk b{display:inline}
+  .wtitle{display:block}
+  .view{padding-top:34px}
+  .vhead h2{font-size:40px}
+  .vhead p{font-size:16px}
+
+  /* tonight hero with photo */
+  .tonight{display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:center;
+    padding:28px 32px;margin-bottom:30px}
+  .tonight .n{font-size:32px;max-width:520px}
+  .tonight .m{font-size:14px}
+  .tonight::after{font-size:120px;right:270px;bottom:-30px}
+  .tonight .k,.tonight .m,.tonight .go{justify-self:start}
+  .tonight .ph{display:block;grid-row:1/5;grid-column:2;justify-self:end;
+    width:290px;aspect-ratio:3/2;object-fit:cover;border:6px solid #FFF8EF;
+    outline:2px solid var(--ink);border-radius:14px;transform:rotate(2.5deg);
+    box-shadow:0 5px 0 rgba(63,46,35,.55);transition:transform .25s}
+  .tonight:hover .ph{transform:rotate(0) scale(1.02)}
+
+  .dtoggle{grid-template-columns:88px 1fr 26px;grid-template-areas:"thumb main chev" "thumb meta chev";
+    column-gap:16px;row-gap:9px;padding:16px 10px 16px 16px}
+  .dthumb{width:88px;height:88px}
+  .dthumb::before{font-size:36px}
+  .dnom{font-size:21px}
+  .dcook{flex:0 0 84px}
+  .dcook b{width:42px;height:42px}
+  .dpanel{padding:6px 24px 26px}
+  .day[data-open="1"] .dpanel{display:grid;grid-template-columns:1.15fr .85fr;gap:0 34px;
+    grid-template-areas:"steps img" "steps time" "steps ingr" "btn btn";align-content:start}
+  .b-steps{grid-area:steps}
+  .dimg{grid-area:img}
+  .b-time{grid-area:time}
+  .b-ingr{grid-area:ingr}
+  .cookbtn{grid-area:btn;max-width:420px;justify-self:center}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+  .grid2 .card{margin-bottom:0}
+  .grid-gouter{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:start}
+  .grid-gouter .card{margin-bottom:0}
+  .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+  .mgrid .card{margin-bottom:0}
+
+  .shopbar{margin:14px 0 0;border:2px solid var(--ink);border-radius:18px;
+    padding:14px 18px;box-shadow:var(--sh-sm)}
+  .segs{max-width:520px}
+  .rays{columns:2;column-gap:44px}
+
+  .foot{padding-bottom:36px}
+}
+@media(max-width:400px){
+  .dtoggle{column-gap:10px}
+  .dmeta i{padding:2px 8px;font-size:10.5px}
+}
+@media(max-width:360px){
+  .lname{font-size:18px}
+  .lname small{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
 </style></head><body>
-<div class="shell">
-  <div class="top">
-    <div class="top-row"><span class="lab">Remise en forme</span>
-      <span class="ttl" id="wtitle"></span>
-      <button class="gear" id="gear" aria-label="Ma progression">
+<header class="top">
+  <div class="hwrap">
+    <div class="tbar">
+      <span class="logo">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M9 8c2-3 5 1 3 3M16 5c2-3 5 1 3 3M23 8c2-3 5 1 3 3" stroke="#8B7767" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <path d="M4 18h32" stroke="#3F2E23" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M7 18v6c0 6 4 10 13 10s13-4 13-10v-6" fill="#F4633C" stroke="#3F2E23" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M2.5 21.5l4.5-2M37.5 21.5l-4.5-2" stroke="#3F2E23" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="15" cy="25" r="1.6" fill="#FFF8EF"/><circle cx="22" cy="28" r="1.6" fill="#FFF8EF"/>
+        </svg>
+        <span class="lname">La Popote<small>Remise en forme · 4 semaines</small></span>
+      </span>
+      <nav class="dnav" aria-label="Sections"></nav>
+      <button class="gear" aria-label="Ma progression">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.6 1.6 0 00-1.8-.3 1.6 1.6 0 00-1 1.5v.2a2 2 0 11-4 0v-.1a1.6 1.6 0 00-1-1.5 1.6 1.6 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.6 1.6 0 00.3-1.8 1.6 1.6 0 00-1.5-1H3a2 2 0 110-4h.1a1.6 1.6 0 001.5-1 1.6 1.6 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.6 1.6 0 001.8.3H9a1.6 1.6 0 001-1.5V3a2 2 0 114 0v.1a1.6 1.6 0 001 1.5 1.6 1.6 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.6 1.6 0 00-.3 1.8V9a1.6 1.6 0 001.5 1h.2a2 2 0 110 4h-.1a1.6 1.6 0 00-1.5 1z"/></svg>
-      </button></div>
+      </button>
+    </div>
     <div class="weeks">
-      <button class="wk" data-week="1">S1<em></em></button><button class="wk" data-week="2">S2<em></em></button>
-      <button class="wk" data-week="3">S3<em></em></button><button class="wk" data-week="4">S4<em></em></button>
+      <button class="wk" data-week="1"><i>S1</i><b>Semaine 1</b><em></em></button>
+      <button class="wk" data-week="2"><i>S2</i><b>Semaine 2</b><em></em></button>
+      <button class="wk" data-week="3"><i>S3</i><b>Semaine 3</b><em></em></button>
+      <button class="wk" data-week="4"><i>S4</i><b>Semaine 4</b><em></em></button>
+      <span class="wtitle" id="wtitle"></span>
     </div>
   </div>
-  <main id="view" class="view"></main>
-</div>
-<nav class="nav">
-  <button data-tab="diners"><svg viewBox="0 0 24 24"><path d="M7 3v8a2 2 0 004 0V3M9 11v10"/><path d="M17 3c-1.5 2-2 4-2 6s.7 2 2 2 2-.5 2-2V3"/><path d="M17 11v10"/></svg><span class="t">Dîners</span><span class="badge" id="bcook">0</span></button>
-  <button data-tab="matin"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="3.5"/><path d="M12 5.5V3M18 13h2.5M3.5 13H6M16.2 8.8l1.7-1.7M6.1 7.1l1.7 1.7M16.2 17.2l1.7 1.7M6.1 18.9l1.7-1.7"/></svg><span class="t">Matin</span></button>
-  <button data-tab="gouter"><svg viewBox="0 0 24 24"><path d="M4 20h16M5 20v-5a7 7 0 0114 0v5"/><path d="M9 6c0-1 1-1.4 1-2.4M13 6c0-1 1-1.4 1-2.4"/></svg><span class="t">Goûter</span></button>
-  <button data-tab="courses"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.2 11.2a2 2 0 002 1.6h7.7a2 2 0 002-1.6L20.5 8H6"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg><span class="t">Courses</span><span class="badge" id="bshop">0</span></button>
-  <button data-tab="mois"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span class="t">Le mois</span></button>
-</nav>
+</header>
+<main id="view" class="view shell"></main>
+<footer class="foot">La Popote · quatre semaines de vrais dîners, fait maison avec ❤️</footer>
+<nav class="mnav" aria-label="Sections"></nav>
 <div class="modal" id="modal" hidden><div class="sheet">
   <h3 id="mtitle"></h3><p id="mmsg"></p>
   <div class="macts" id="macts"><button id="mno">Annuler</button><button id="myes" class="yes"></button></div>
 </div></div>
 <input type="file" id="file" accept="application/json,.json" hidden>
-<script>const D={"jours": ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"], "cats": {"poisson": {"label": "Poisson", "bg": "#DCEAF4", "ink": "#1D4E6E", "rule": "#5E9BC4", "chip": "#BDD9EC"}, "mer": {"label": "Fruits de mer", "bg": "#D8EDEF", "ink": "#16565C", "rule": "#4FA0A8", "chip": "#B6DDE1"}, "blanche": {"label": "Viande blanche", "bg": "#F0E4CC", "ink": "#79571F", "rule": "#C0A164", "chip": "#E4D2AE"}, "rouge": {"label": "Viande rouge", "bg": "#F5D8D5", "ink": "#8C3B34", "rule": "#C77F77", "chip": "#EDC2BD"}, "oeufs": {"label": "Œufs", "bg": "#F8EBBD", "ink": "#77621A", "rule": "#CFB040", "chip": "#F0DC9B"}}, "breakfasts": [{"nom": "Bol express", "temps": "3 min", "prot": "28 g", "desc": "Skyr, flocons d'avoine crus, banane écrasée, purée d'amande. Tout dans le bol, on mélange, c'est fini.", "enfant": "Même base en plus petit, avec des fruits frais coupés à la place de la purée d'amande."}, {"nom": "Œufs brouillés", "temps": "7 min", "prot": "30 g", "desc": "Quatre œufs par adulte, feu doux, on retire la poêle avant que ce soit sec. Pain complet et un fruit.", "enfant": "Un œuf, une tartine beurrée, un fruit. Les œufs brouillés passent très bien à cet âge."}, {"nom": "Assiette froide", "temps": "4 min", "prot": "30 g", "desc": "Fromage blanc, fruits, poignée d'amandes en poudre, tartine de pain complet au jambon ou au fromage.", "enfant": "Tartine, fromage blanc, fruit, verre de lait. Zéro cuisson les matins qui partent en vrille."}, {"nom": "Pancakes protéinés", "temps": "12 min", "prot": "32 g", "desc": "Le format week-end : flocons mixés, œufs, fromage blanc, banane. À la poêle, sans sucre.", "enfant": "Les mêmes, avec un peu de compote ou des fruits rouges écrasés dessus."}], "bkCourses": [["Skyr ou fromage blanc 0 %", "2 kg"], ["Flocons d'avoine", "500 g"], ["Œufs (part petit-déjeuner)", "18"], ["Pain complet", "2 pains"], ["Jambon blanc", "1 paquet (8 tranches)"], ["Lait demi-écrémé", "2 L"], ["Bananes", "7"], ["Fruits de saison", "1 kg"], ["Fruits rouges surgelés", "500 g"], ["Purée d'amande ou de cacahuète 100 %", "1 pot de 200 g"], ["Amandes en poudre", "200 g"]], "gouters": [["Skyr + fruits rouges", "18 g de protéines, 1 minute, zéro préparation."], ["Deux œufs durs + un fruit", "13 g. Cuis-en six d'avance le dimanche soir, ils tiennent une semaine."], ["Tartine pain complet + purée de cacahuète", "12 g. Le goûter que l'enfant réclamera aussi."], ["Fromage blanc + cannelle + amandes en poudre", "20 g. Le plus rassasiant avant une séance."]], "semaines": [{"num": 1, "titre": "On installe le rythme", "intro": "Semaine de calage : des cuissons courtes, des poêles simples, rien qui demande d'anticiper. L'objectif est de prouver que 15 minutes suffisent.", "focus": "Bol express", "repas": [{"nom": "Steak haché & semoule, poêlée méditerranéenne", "cat": "rouge", "temps": 15, "prot": 42, "chrono": [["Semoule", 5], ["Légumes", 8], ["Viande", 4], ["Dressage", 2]], "steps": ["Porter 320 ml d'eau salée à ébullition, verser sur la semoule avec un filet d'huile d'olive, couvrir et laisser gonfler 5 min.", "Poêle très chaude : légumes surgelés + herbes de Provence, à couvert 8 min sans décongeler.", "Deuxième poêle brûlante : steaks 2 min par face, saler après cuisson.", "Égrainer la semoule à la fourchette, ail écrasé dans les légumes en fin de cuisson.", "Gamelles : monter les boîtes tant que c'est chaud, fermer une fois refroidi."], "ingr": [["Steak haché 5 % MG", "800 g"], ["Semoule moyenne", "320 g"], ["Poêlée méditerranéenne surgelée", "800 g"], ["Ail", "3 gousses"], ["Herbes de Provence", "1 c. à s."], ["Huile d'olive", "3 c. à s."]]}, {"nom": "Omelette feta-épinards, pain complet & salade", "cat": "oeufs", "temps": 12, "prot": 34, "chrono": [["Épinards", 6], ["Œufs", 2], ["Cuisson", 5]], "steps": ["Épinards surgelés à la poêle, à couvert 6 min. Découvrir et laisser l'eau s'évaporer complètement.", "Battre les œufs, sel et poivre généreux.", "Verser sur les épinards, parsemer la feta émiettée.", "Couvrir, feu doux 5 min : l'omelette prend sans se retourner.", "Salade à la vinaigrette huile d'olive-moutarde, pain complet à côté."], "ingr": [["Œufs", "14"], ["Feta", "200 g"], ["Épinards hachés surgelés", "400 g"], ["Salade verte en sachet", "150 g"], ["Pain complet", "1/2 pain"], ["Moutarde", "1 c. à c."]]}, {"nom": "Dinde à la moutarde, lentilles & tomates cerises", "cat": "blanche", "temps": 15, "prot": 46, "chrono": [["Découpe", 3], ["Dinde", 5], ["Sauce", 3], ["Lentilles", 4]], "steps": ["Escalopes en lanières d'1 cm. Poêle bien chaude, 5 min en remuant peu.", "Ajouter moutarde à l'ancienne, crème et 5 cl d'eau. Mijoter 3 min.", "Deuxième poêle : lentilles égouttées et rincées + tomates cerises coupées en deux, 4 min à feu vif.", "Poivrer les lentilles, ne pas les saler (le bocal l'est déjà)."], "ingr": [["Escalopes de dinde", "800 g"], ["Lentilles vertes cuites (bocal)", "2 × 400 g"], ["Tomates cerises", "400 g"], ["Moutarde à l'ancienne", "3 c. à s."], ["Crème légère 15 %", "15 cl"]]}, {"nom": "Crevettes ail-persil, pâtes complètes & courgettes", "cat": "mer", "temps": 15, "prot": 40, "chrono": [["Eau", 4], ["Courgettes", 7], ["Crevettes", 4]], "steps": ["Grande casserole d'eau salée, pâtes selon le paquet.", "Courgettes en rondelles fines, poêle huile d'olive, feu vif 7 min.", "Ajouter les crevettes encore surgelées et l'ail haché, 4 min jusqu'à ce qu'elles soient roses.", "Hors du feu : persil ciselé et jus de citron. Mélanger aux pâtes égouttées."], "ingr": [["Crevettes crues décortiquées surgelées", "800 g"], ["Pâtes complètes", "360 g"], ["Courgettes", "3 (600 g)"], ["Ail", "4 gousses"], ["Persil frais", "1 botte"], ["Citron", "1"]]}, {"nom": "Truite poêlée, riz basmati & brocolis", "cat": "poisson", "temps": 18, "prot": 40, "chrono": [["Riz", 10], ["Brocolis", 8], ["Truite", 7]], "steps": ["Riz basmati, 10 min à couvert.", "Brocolis surgelés à la poêle avec 3 c. à s. d'eau, à couvert 8 min.", "Truite peau vers le bas dans une poêle chaude SANS matière grasse : 5 min sans y toucher.", "Retourner 2 min. La peau doit être croustillante.", "Aneth et citron au moment de servir."], "ingr": [["Pavés de truite avec peau", "5 (750 g)"], ["Riz basmati", "320 g"], ["Brocolis surgelés", "700 g"], ["Citron", "1"], ["Aneth", "1 petite botte"]]}, {"nom": "Poulet curry-coco léger & riz", "cat": "blanche", "temps": 20, "prot": 42, "chrono": [["Riz", 10], ["Légumes", 5], ["Poulet", 6], ["Sauce", 6]], "steps": ["Lancer le riz.", "Oignon émincé et poivron en lanières, 5 min à feu vif.", "Poulet en dés de 2 cm, 6 min jusqu'à coloration.", "Curry 1 min à sec pour le réveiller, puis lait de coco. Mijoter 6 min.", "Version enfant : prélever avant d'ajouter le curry, il aura poulet + riz nature."], "ingr": [["Blancs de poulet", "800 g"], ["Riz basmati", "320 g"], ["Lait de coco léger", "40 cl"], ["Curry doux", "2 c. à s."], ["Oignon", "1"], ["Poivron rouge", "1"]]}, {"nom": "Cabillaud au four, patate douce & haricots verts", "cat": "poisson", "temps": 25, "prot": 36, "chrono": [["Four", 20], ["Poisson", 12], ["Haricots", 8]], "steps": ["Four à 200 °C. Patates douces en dés de 2 cm, huile d'olive + paprika, sur plaque 20 min.", "À mi-cuisson, pousser les dés sur un côté et poser les dos de cabillaud sur la plaque.", "Haricots verts à la poêle à couvert, 8 min.", "Citron sur le poisson à la sortie du four."], "ingr": [["Dos de cabillaud", "800 g"], ["Patates douces", "900 g"], ["Haricots verts surgelés", "700 g"], ["Paprika", "1 c. à c."], ["Citron", "1"]]}], "gateau": {"nom": "Moelleux chocolat-courgette", "sous": "Personne ne devine la courgette. Elle apporte le moelleux à la place du beurre.", "parts": 8, "prot": 8, "temps": "35 min dont 30 de four", "ingr": [["Courgette râpée et bien essorée", "200 g"], ["Œufs", "4"], ["Poudre d'amande", "100 g"], ["Cacao non sucré", "40 g"], ["Fromage blanc 0 %", "150 g"], ["Levure chimique", "1 sachet"], ["Extrait de vanille", "1 c. à c."], ["Érythritol (facultatif)", "30 g"]], "steps": ["Râper la courgette et l'essorer à fond dans un torchon : c'est l'étape qui décide de la réussite.", "Fouetter œufs, fromage blanc et vanille.", "Incorporer poudre d'amande, cacao et levure.", "Ajouter la courgette, verser dans un moule chemisé.", "180 °C pendant 30 min. Le cœur doit rester légèrement humide."]}, "courses": {"Boucherie & volaille": [["Steak haché 5 % MG", "800 g"], ["Escalopes de dinde", "800 g"], ["Blancs de poulet", "800 g"]], "Poissonnerie": [["Crevettes crues décortiquées (surgelées)", "800 g"], ["Pavés de truite avec peau", "5 (750 g)"], ["Dos de cabillaud", "800 g"]], "Crémerie": [["Œufs", "14"], ["Feta", "200 g"], ["Crème légère 15 %", "15 cl"]], "Surgelés légumes": [["Poêlée méditerranéenne", "800 g"], ["Épinards hachés", "400 g"], ["Brocolis", "700 g"], ["Haricots verts", "700 g"]], "Fruits & légumes": [["Courgettes", "3"], ["Tomates cerises", "400 g"], ["Patates douces", "900 g"], ["Salade verte en sachet", "150 g"], ["Oignon", "1"], ["Poivron rouge", "1"], ["Ail", "1 tête"], ["Citrons", "3"], ["Persil", "1 botte"], ["Aneth", "1 botte"]], "Épicerie": [["Semoule moyenne", "320 g"], ["Pâtes complètes", "360 g"], ["Riz basmati", "640 g"], ["Lentilles vertes cuites (bocal)", "2 × 400 g"], ["Lait de coco léger", "40 cl"], ["Moutarde à l'ancienne", "1 pot"], ["Curry doux", "1 pot"], ["Paprika", "1 pot"], ["Herbes de Provence", "1 pot"], ["Huile d'olive", "1 bouteille"]], "Pour le gâteau": [["Courgette", "1"], ["Œufs", "4"], ["Poudre d'amande", "100 g"], ["Cacao non sucré", "40 g"], ["Fromage blanc 0 %", "150 g"], ["Levure chimique", "1 sachet"], ["Extrait de vanille", "1 flacon"], ["Érythritol (facultatif)", "1 sachet"]]}}, {"num": 2, "titre": "On monte en variété", "intro": "Les mêmes durées, mais on élargit : porc, chili, papillotes. Le four entre en jeu deux fois, uniquement quand il travaille sans toi.", "focus": "Œufs brouillés", "repas": [{"nom": "Boulettes de bœuf à la tomate & coquillettes complètes", "cat": "rouge", "temps": 20, "prot": 42, "chrono": [["Boulettes", 5], ["Cuisson", 6], ["Sauce", 8], ["Pâtes", 9]], "steps": ["Mélanger bœuf haché, œuf, chapelure, ail écrasé, origan, sel. Former des boulettes de la taille d'une noix.", "Poêle chaude, 6 min en les roulant pour les colorer sur toutes les faces.", "Verser la passata, mijoter 8 min à couvert.", "Coquillettes en parallèle. Parmesan râpé au service."], "ingr": [["Bœuf haché 5 % MG", "800 g"], ["Œuf", "1"], ["Chapelure", "40 g"], ["Coquillettes complètes", "360 g"], ["Passata de tomate", "700 g"], ["Parmesan", "60 g"], ["Ail", "2 gousses"], ["Origan", "1 c. à c."]]}, {"nom": "Poulet citron-thym, quinoa & poêlée de légumes", "cat": "blanche", "temps": 18, "prot": 44, "chrono": [["Quinoa", 12], ["Poulet", 8], ["Légumes", 8]], "steps": ["Quinoa 12 min dans deux fois son volume d'eau salée.", "Poulet en aiguillettes, poêle chaude 8 min. Saler en fin de cuisson.", "Jus de citron + thym + un fond d'eau en déglaçage, 1 min.", "Poêlée de légumes surgelés à côté, 8 min à couvert."], "ingr": [["Blancs de poulet", "800 g"], ["Quinoa", "320 g"], ["Poêlée de légumes surgelée", "800 g"], ["Citron", "2"], ["Thym", "quelques branches"]]}, {"nom": "Colin poêlé, purée maison & épinards", "cat": "poisson", "temps": 20, "prot": 36, "chrono": [["Pommes de terre", 15], ["Épinards", 7], ["Colin", 8]], "steps": ["Pommes de terre en petits cubes (cuisson deux fois plus rapide), 15 min à l'eau bouillante salée.", "Épinards surgelés à la poêle 7 min, égoutter.", "Colin fariné légèrement, poêle chaude 4 min par face.", "Écraser les pommes de terre avec le lait chaud et une noisette de beurre."], "ingr": [["Filets de colin", "800 g"], ["Pommes de terre", "900 g"], ["Épinards en branches surgelés", "600 g"], ["Lait", "15 cl"], ["Beurre", "20 g"], ["Farine", "2 c. à s."], ["Citron", "1"]]}, {"nom": "Frittata jambon-parmesan-courgette & salade", "cat": "oeufs", "temps": 18, "prot": 34, "chrono": [["Courgettes", 6], ["Œufs", 3], ["Cuisson", 9]], "steps": ["Courgettes en fines rondelles, poêle 6 min.", "Battre les œufs avec le parmesan râpé, ajouter le jambon en dés.", "Verser sur les courgettes, feu doux à couvert 9 min.", "Se mange chaude ou froide : la gamelle du lendemain est meilleure que le plat du soir."], "ingr": [["Œufs", "14"], ["Jambon blanc", "200 g"], ["Parmesan", "80 g"], ["Courgettes", "2 (400 g)"], ["Salade verte", "150 g"]]}, {"nom": "Médaillons de filet mignon, riz & champignons", "cat": "blanche", "temps": 20, "prot": 42, "chrono": [["Riz", 10], ["Champignons", 7], ["Porc", 10]], "steps": ["Riz en route.", "Filet mignon en médaillons de 2 cm. Poêle très chaude, 4 min par face.", "Réserver la viande, jeter les champignons émincés dans la même poêle, 7 min.", "Crème + ail + persil, remettre la viande 2 min. Ne pas prolonger : le porc sèche vite."], "ingr": [["Filet mignon de porc", "900 g"], ["Riz basmati", "320 g"], ["Champignons de Paris", "500 g"], ["Crème légère 15 %", "15 cl"], ["Ail", "2 gousses"], ["Persil", "1/2 botte"]]}, {"nom": "Chili express & riz", "cat": "rouge", "temps": 20, "prot": 44, "chrono": [["Légumes", 5], ["Viande", 6], ["Mijotage", 9], ["Riz", 10]], "steps": ["Oignon et poivron en dés, 5 min.", "Bœuf haché, écraser à la spatule, 6 min.", "Cumin et paprika 1 min, puis passata et haricots rouges égouttés. Mijoter 9 min.", "Part enfant à prélever avant d'ajouter les épices si tu le sais sensible."], "ingr": [["Bœuf haché 5 % MG", "800 g"], ["Haricots rouges", "2 × 400 g"], ["Passata de tomate", "400 g"], ["Riz basmati", "320 g"], ["Poivron", "1"], ["Oignon", "1"], ["Cumin + paprika", "1 c. à c. chacun"]]}, {"nom": "Papillotes de truite, semoule & légumes", "cat": "poisson", "temps": 22, "prot": 38, "chrono": [["Montage", 7], ["Four", 15], ["Semoule", 5]], "steps": ["Four à 200 °C. Sur chaque feuille de papier cuisson : rondelles de courgette et carotte râpée en lit.", "Poser le pavé de truite dessus, une rondelle de citron, aneth, filet d'huile.", "Fermer hermétiquement, 15 min au four.", "Semoule gonflée pendant ce temps. Ouvrir les papillotes à table, l'enfant adore."], "ingr": [["Pavés de truite", "5 (750 g)"], ["Semoule moyenne", "320 g"], ["Courgette", "2"], ["Carotte", "3"], ["Citron", "2"], ["Aneth", "1 botte"]]}], "gateau": {"nom": "Cheesecake au skyr, vanille-citron", "sous": "Sans pâte, sans sucre, sans beurre. Trois ingrédients principaux et 40 min de four qui travaillent seuls.", "parts": 8, "prot": 9, "temps": "45 min dont 40 de four", "ingr": [["Skyr nature", "500 g"], ["Œufs", "3"], ["Maïzena", "30 g"], ["Zeste de citron", "1 citron"], ["Extrait de vanille", "1 c. à c."], ["Érythritol (facultatif)", "40 g"]], "steps": ["Fouetter le skyr et les œufs jusqu'à obtenir un appareil parfaitement lisse.", "Ajouter maïzena, zeste et vanille.", "Verser dans un moule à charnière chemisé.", "160 °C pendant 40 min. Il doit encore trembloter au centre.", "Laisser refroidir dans le four éteint, porte entrouverte, pour éviter qu'il ne craquelle. Frigo 3 h."]}, "courses": {"Boucherie & volaille": [["Bœuf haché 5 % MG", "1,6 kg"], ["Blancs de poulet", "800 g"], ["Filet mignon de porc", "900 g"], ["Jambon blanc", "200 g"]], "Poissonnerie": [["Filets de colin", "800 g"], ["Pavés de truite", "5 (750 g)"]], "Crémerie": [["Œufs", "15"], ["Parmesan", "140 g"], ["Crème légère 15 %", "15 cl"], ["Beurre", "1 plaquette"]], "Surgelés légumes": [["Poêlée de légumes", "800 g"], ["Épinards en branches", "600 g"]], "Fruits & légumes": [["Pommes de terre", "900 g"], ["Courgettes", "4"], ["Carottes", "3"], ["Champignons de Paris", "500 g"], ["Poivron", "1"], ["Oignons", "2"], ["Citrons", "5"], ["Salade verte", "150 g"], ["Ail", "1 tête"], ["Aneth", "1 botte"], ["Persil", "1/2 botte"], ["Thym", "1 bouquet"]], "Épicerie": [["Coquillettes complètes", "360 g"], ["Quinoa", "320 g"], ["Riz basmati", "320 g"], ["Semoule moyenne", "320 g"], ["Passata de tomate", "1,1 kg"], ["Haricots rouges", "2 × 400 g"], ["Chapelure", "1 paquet"], ["Farine", "1 paquet"], ["Cumin", "1 pot"], ["Origan", "1 pot"]], "Pour le gâteau": [["Skyr nature", "500 g"], ["Œufs", "3"], ["Maïzena", "1 paquet"], ["Citron", "1"], ["Érythritol (facultatif)", "1 sachet"]]}}, {"num": 3, "titre": "Le cap des habitudes", "intro": "C'est la semaine où on décroche, en général. Donc : des plats plus plaisir (burgers, wok, shakshuka) sans rien lâcher sur les protéines.", "focus": "Assiette froide", "repas": [{"nom": "Émincé de dinde crème-moutarde & tagliatelles", "cat": "blanche", "temps": 15, "prot": 45, "chrono": [["Pâtes", 8], ["Dinde", 6], ["Sauce", 4]], "steps": ["Tagliatelles à l'eau bouillante salée.", "Dinde en lanières, poêle très chaude 6 min.", "Fromage blanc + moutarde + un peu d'eau de cuisson des pâtes hors du feu : la sauce reste crémeuse sans grainer.", "Ne jamais faire bouillir le fromage blanc, il tranche."], "ingr": [["Escalopes de dinde", "800 g"], ["Tagliatelles complètes", "360 g"], ["Fromage blanc 0 %", "250 g"], ["Moutarde", "2 c. à s."], ["Ciboulette", "1 botte"]]}, {"nom": "Dorade à la plancha, boulgour & ratatouille", "cat": "poisson", "temps": 18, "prot": 42, "chrono": [["Boulgour", 12], ["Ratatouille", 10], ["Dorade", 4]], "steps": ["Boulgour 12 min à l'eau bouillante salée.", "Ratatouille à réchauffer à la poêle, 10 min à feu moyen pour la réduire un peu.", "Filets de dorade : poêle fumante, 2 à 3 min par face. La chair doit rester nacrée.", "Fleur de sel et huile d'olive crue à la sortie."], "ingr": [["Filets de dorade", "800 g"], ["Boulgour", "320 g"], ["Ratatouille (bocal ou surgelée)", "800 g"], ["Huile d'olive", "3 c. à s."]]}, {"nom": "Shakshuka & pain complet", "cat": "oeufs", "temps": 20, "prot": 32, "chrono": [["Poivrons", 7], ["Sauce", 6], ["Œufs", 7]], "steps": ["Poivrons et oignon en lanières, 7 min à feu vif.", "Passata, cumin, paprika, sel. Réduire 6 min.", "Creuser des puits à la cuillère, casser un œuf dans chacun.", "Couvrir, feu doux 7 min : le blanc prend, le jaune reste coulant.", "Feta émiettée et pain complet pour saucer."], "ingr": [["Œufs", "12"], ["Passata de tomate", "700 g"], ["Poivrons", "3"], ["Oignon", "1"], ["Feta", "150 g"], ["Cumin", "1 c. à c."], ["Pain complet", "1/2 pain"]]}, {"nom": "Poulet paprika-yaourt, riz & poivrons", "cat": "blanche", "temps": 20, "prot": 44, "chrono": [["Riz", 10], ["Poivrons", 6], ["Poulet", 8], ["Sauce", 3]], "steps": ["Riz en route.", "Poivrons en lanières, 6 min à feu vif.", "Poulet en dés + paprika fumé, 8 min.", "Hors du feu : yaourt grec, sel, un trait de citron. La sauce doit napper, pas bouillir."], "ingr": [["Blancs de poulet", "800 g"], ["Riz basmati", "320 g"], ["Yaourt grec", "300 g"], ["Poivrons", "3"], ["Paprika fumé", "2 c. à c."], ["Citron", "1"]]}, {"nom": "Wok de crevettes, riz & petits pois", "cat": "mer", "temps": 18, "prot": 38, "chrono": [["Riz", 10], ["Œufs", 3], ["Wok", 8]], "steps": ["Riz cuit et refroidi rapidement (passe-le sous l'eau froide, il sautera mieux).", "Brouiller les œufs à part, réserver.", "Wok brûlant : crevettes et gingembre râpé 4 min, puis petits pois 2 min.", "Ajouter riz et œufs, sauter 2 min. Assaisonner au citron vert et au poivre — pas de sauce soja."], "ingr": [["Crevettes crues décortiquées", "700 g"], ["Riz basmati", "320 g"], ["Petits pois surgelés", "400 g"], ["Œufs", "3"], ["Gingembre frais", "1 morceau"], ["Citron vert", "1"]]}, {"nom": "Burgers maison, frites de patate douce & crudités", "cat": "rouge", "temps": 25, "prot": 44, "chrono": [["Four", 22], ["Steaks", 5], ["Montage", 4]], "steps": ["Four à 210 °C. Patates douces en bâtonnets, huile + paprika, 22 min en les retournant à mi-parcours.", "Steaks hachés façonnés à la main, poêle brûlante 2 min par face.", "Cheddar sur le steak en fin de cuisson, couvrir 30 s pour le faire fondre.", "Pains toastés, tomate, salade, oignon rouge. Sauce : fromage blanc + moutarde + ciboulette."], "ingr": [["Bœuf haché 5 % MG", "800 g"], ["Pains à burger complets", "5"], ["Cheddar en tranches", "5"], ["Patates douces", "900 g"], ["Tomate", "2"], ["Salade", "quelques feuilles"], ["Oignon rouge", "1"]]}, {"nom": "Cabillaud crème-citron, pommes de terre & haricots verts", "cat": "poisson", "temps": 22, "prot": 36, "chrono": [["Pommes de terre", 18], ["Haricots", 8], ["Poisson", 8]], "steps": ["Pommes de terre en quartiers, cuisson vapeur ou eau bouillante 18 min.", "Haricots verts surgelés à la poêle à couvert, 8 min.", "Cabillaud dans une poêle avec crème, jus de citron et zeste, à couvert 8 min à feu doux.", "Le poisson est prêt quand la chair se détache en lamelles sous la fourchette."], "ingr": [["Dos de cabillaud", "800 g"], ["Pommes de terre", "900 g"], ["Haricots verts surgelés", "700 g"], ["Crème légère 15 %", "20 cl"], ["Citron", "2"], ["Ciboulette", "1 botte"]]}], "gateau": {"nom": "Cookies avoine-cacahuète", "sous": "Aucun sucre ajouté : toute la douceur vient de la banane. Douze minutes de four, ils tiennent cinq jours.", "parts": 12, "prot": 7, "temps": "20 min dont 12 de four", "ingr": [["Flocons d'avoine", "150 g"], ["Purée de cacahuète 100 %", "120 g"], ["Œufs", "2"], ["Banane très mûre", "1"], ["Cannelle", "1 c. à c."], ["Pincée de sel", "1"]], "steps": ["Écraser la banane à la fourchette jusqu'à obtenir une purée lisse.", "Mélanger avec la purée de cacahuète et les œufs.", "Ajouter flocons, cannelle et sel. La pâte doit être collante, c'est normal.", "Former 12 tas à la cuillère sur une plaque, aplatir légèrement.", "180 °C pendant 12 min. Ils durcissent en refroidissant, ne les sur-cuis pas."]}, "courses": {"Boucherie & volaille": [["Escalopes de dinde", "800 g"], ["Blancs de poulet", "800 g"], ["Bœuf haché 5 % MG", "800 g"]], "Poissonnerie": [["Filets de dorade", "800 g"], ["Crevettes crues décortiquées", "700 g"], ["Dos de cabillaud", "800 g"]], "Crémerie": [["Œufs", "15"], ["Fromage blanc 0 %", "400 g"], ["Yaourt grec", "300 g"], ["Feta", "150 g"], ["Crème légère 15 %", "20 cl"], ["Cheddar en tranches", "5"]], "Surgelés légumes": [["Petits pois", "400 g"], ["Haricots verts", "700 g"]], "Fruits & légumes": [["Poivrons", "6"], ["Oignon", "1"], ["Oignon rouge", "1"], ["Tomates", "2"], ["Patates douces", "900 g"], ["Pommes de terre", "900 g"], ["Salade verte", "1 sachet"], ["Citrons", "3"], ["Citron vert", "1"], ["Gingembre frais", "1 morceau"], ["Ciboulette", "2 bottes"]], "Épicerie": [["Tagliatelles complètes", "360 g"], ["Boulgour", "320 g"], ["Riz basmati", "640 g"], ["Ratatouille (bocal ou surgelée)", "800 g"], ["Passata de tomate", "700 g"], ["Pains à burger complets", "5"], ["Paprika fumé", "1 pot"], ["Moutarde", "1 pot"]], "Pour le gâteau": [["Flocons d'avoine", "150 g"], ["Purée de cacahuète 100 %", "120 g"], ["Œufs", "2"], ["Banane très mûre", "1"], ["Cannelle", "1 pot"]]}}, {"num": 4, "titre": "Le rythme de croisière", "intro": "Les plats que tu garderas après le mois d'essai. Bolognaise, gratin, tortilla : de quoi tenir sans y penser.", "focus": "Pancakes protéinés", "repas": [{"nom": "Sauté de dinde aux poivrons & semoule", "cat": "blanche", "temps": 18, "prot": 44, "chrono": [["Légumes", 7], ["Dinde", 8], ["Semoule", 5]], "steps": ["Poivrons et oignon en lanières, feu vif 7 min pour les colorer.", "Dinde en lanières, 8 min.", "Paprika, ail, un trait de vinaigre balsamique pour laquer.", "Semoule gonflée à côté avec un filet d'huile d'olive."], "ingr": [["Escalopes de dinde", "800 g"], ["Semoule moyenne", "320 g"], ["Poivrons (rouge + jaune)", "3"], ["Oignon", "1"], ["Paprika", "1 c. à c."], ["Vinaigre balsamique", "1 c. à s."]]}, {"nom": "Pâtes au colin émietté, tomate & parmesan", "cat": "poisson", "temps": 15, "prot": 38, "chrono": [["Pâtes", 9], ["Sauce", 8], ["Colin", 5]], "steps": ["Pâtes à l'eau bouillante salée.", "Ail haché dans l'huile d'olive 1 min, puis passata, 6 min de réduction.", "Poser les morceaux de colin dans la sauce, couvrir 5 min, puis émietter à la fourchette avec les câpres.", "Mélanger aux pâtes avec une louche d'eau de cuisson, parmesan au service."], "ingr": [["Filets de colin", "700 g"], ["Pâtes complètes", "360 g"], ["Passata de tomate", "500 g"], ["Parmesan", "60 g"], ["Câpres", "2 c. à s."], ["Ail", "3 gousses"]]}, {"nom": "Tortilla jambon & pomme de terre, salade", "cat": "oeufs", "temps": 22, "prot": 34, "chrono": [["Pommes de terre", 12], ["Montage", 3], ["Cuisson", 10]], "steps": ["Pommes de terre en fines rondelles, poêle à couvert avec l'oignon, 12 min.", "Battre les œufs, ajouter le jambon en dés, saler.", "Verser sur les pommes de terre, feu doux à couvert 10 min.", "Se mange tiède ou froide. La part de midi passe très bien en gamelle sans réchauffage."], "ingr": [["Œufs", "14"], ["Pommes de terre", "600 g"], ["Jambon blanc", "200 g"], ["Oignon", "1"], ["Salade verte", "150 g"]]}, {"nom": "Poulet grillé, lentilles & carottes fondantes", "cat": "blanche", "temps": 22, "prot": 45, "chrono": [["Carottes", 12], ["Poulet", 12], ["Lentilles", 5]], "steps": ["Carottes en rondelles, poêle à couvert avec un fond d'eau, 12 min.", "Cuisses de poulet désossées côté peau en premier, poêle chaude 8 min, puis 4 min de l'autre côté.", "Lentilles égouttées ajoutées aux carottes, thym, 5 min.", "Déglacer la poêle du poulet avec un peu d'eau et verser ce jus sur les lentilles."], "ingr": [["Cuisses de poulet désossées", "900 g"], ["Lentilles vertes cuites (bocal)", "2 × 400 g"], ["Carottes", "5 (500 g)"], ["Thym", "quelques branches"]]}, {"nom": "Truite miel-moutarde au four, riz & brocolis", "cat": "poisson", "temps": 22, "prot": 40, "chrono": [["Four", 14], ["Riz", 10], ["Brocolis", 8]], "steps": ["Four à 200 °C. Mélanger miel, moutarde et un trait de citron.", "Badigeonner les pavés, 14 min au four sur papier cuisson.", "Riz et brocolis pendant ce temps.", "Arroser le poisson de son jus de plaque au moment de servir."], "ingr": [["Pavés de truite", "5 (750 g)"], ["Riz basmati", "320 g"], ["Brocolis surgelés", "700 g"], ["Miel", "2 c. à s."], ["Moutarde", "2 c. à s."], ["Citron", "1"]]}, {"nom": "Bolognaise maison & spaghetti complets", "cat": "rouge", "temps": 25, "prot": 42, "chrono": [["Légumes", 6], ["Viande", 6], ["Mijotage", 13], ["Pâtes", 9]], "steps": ["Oignon et carotte en tout petits dés, 6 min.", "Bœuf haché, écraser à la spatule, 6 min à feu vif.", "Passata, ail, origan, laurier. Mijoter 13 min à découvert.", "Spaghetti al dente, parmesan au service. La sauce est encore meilleure réchauffée le lendemain."], "ingr": [["Bœuf haché 5 % MG", "800 g"], ["Spaghetti complets", "360 g"], ["Passata de tomate", "700 g"], ["Carotte", "2"], ["Oignon", "1"], ["Parmesan", "60 g"], ["Origan + laurier", "1 c. à c. + 1 feuille"]]}, {"nom": "Gratin de poisson blanc, épinards & pommes de terre", "cat": "poisson", "temps": 30, "prot": 36, "chrono": [["Pommes de terre", 15], ["Montage", 5], ["Four", 20]], "steps": ["Pommes de terre en rondelles, précuites 15 min à l'eau bouillante.", "Épinards surgelés poêlés 7 min, bien égouttés.", "Dans un plat : pommes de terre, épinards, poisson en morceaux, crème citronnée, emmental.", "200 °C pendant 20 min. Le seul plat du mois où le four fait vraiment le travail."], "ingr": [["Filets de colin ou cabillaud", "800 g"], ["Pommes de terre", "800 g"], ["Épinards en branches surgelés", "600 g"], ["Crème légère 15 %", "20 cl"], ["Emmental râpé", "80 g"], ["Citron", "1"], ["Muscade", "1 pincée"]]}], "gateau": {"nom": "Muffins pomme-cannelle", "sous": "Aucun sucre ajouté : compote sans sucres ajoutés et dés de pomme font tout le travail.", "parts": 10, "prot": 8, "temps": "30 min dont 22 de four", "ingr": [["Compote sans sucres ajoutés", "200 g"], ["Œufs", "3"], ["Flocons d'avoine mixés", "100 g"], ["Fromage blanc 0 %", "150 g"], ["Poudre d'amande", "60 g"], ["Levure chimique", "1 sachet"], ["Cannelle", "2 c. à c."], ["Pomme en petits dés", "1"]], "steps": ["Mixer les flocons d'avoine en farine grossière.", "Fouetter œufs, compote et fromage blanc.", "Ajouter flocons mixés, poudre d'amande, levure et cannelle.", "Incorporer les dés de pomme, répartir dans 10 caissettes.", "180 °C pendant 22 min. Pointe de couteau sèche = c'est cuit."]}, "courses": {"Boucherie & volaille": [["Escalopes de dinde", "800 g"], ["Cuisses de poulet désossées", "900 g"], ["Bœuf haché 5 % MG", "800 g"], ["Jambon blanc", "200 g"]], "Poissonnerie": [["Filets de colin", "700 g"], ["Pavés de truite", "5 (750 g)"], ["Filets de colin ou cabillaud", "800 g"]], "Crémerie": [["Œufs", "14"], ["Parmesan", "60 g"], ["Emmental râpé", "80 g"], ["Crème légère 15 %", "20 cl"]], "Surgelés légumes": [["Brocolis", "700 g"], ["Épinards en branches", "600 g"]], "Fruits & légumes": [["Poivrons", "3"], ["Oignons", "3"], ["Carottes", "7"], ["Pommes de terre", "1,4 kg"], ["Salade verte", "150 g"], ["Citrons", "2"], ["Ail", "1 tête"], ["Thym + laurier", "1 bouquet"]], "Épicerie": [["Semoule moyenne", "320 g"], ["Pâtes complètes", "360 g"], ["Spaghetti complets", "360 g"], ["Riz basmati", "320 g"], ["Passata de tomate", "1,2 kg"], ["Lentilles vertes cuites (bocal)", "2 × 400 g"], ["Câpres", "1 bocal"], ["Miel", "1 pot"], ["Vinaigre balsamique", "1 bouteille"], ["Muscade", "1 pot"]], "Pour le gâteau": [["Compote sans sucres ajoutés", "200 g"], ["Œufs", "3"], ["Flocons d'avoine", "100 g"], ["Fromage blanc 0 %", "150 g"], ["Poudre d'amande", "60 g"], ["Levure chimique", "1 sachet"], ["Pomme", "1"]]}}]};
+<script>
+const D={"jours": ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"], "cats": {"poisson": {"label": "Poisson", "bg": "#DCEAF4", "ink": "#1D4E6E", "rule": "#5E9BC4", "chip": "#BDD9EC"}, "mer": {"label": "Fruits de mer", "bg": "#D8EDEF", "ink": "#16565C", "rule": "#4FA0A8", "chip": "#B6DDE1"}, "blanche": {"label": "Viande blanche", "bg": "#F0E4CC", "ink": "#79571F", "rule": "#C0A164", "chip": "#E4D2AE"}, "rouge": {"label": "Viande rouge", "bg": "#F5D8D5", "ink": "#8C3B34", "rule": "#C77F77", "chip": "#EDC2BD"}, "oeufs": {"label": "Œufs", "bg": "#F8EBBD", "ink": "#77621A", "rule": "#CFB040", "chip": "#F0DC9B"}}, "breakfasts": [{"nom": "Bol express", "temps": "3 min", "prot": "28 g", "desc": "Skyr, flocons d'avoine crus, banane écrasée, purée d'amande. Tout dans le bol, on mélange, c'est fini.", "enfant": "Même base en plus petit, avec des fruits frais coupés à la place de la purée d'amande."}, {"nom": "Œufs brouillés", "temps": "7 min", "prot": "30 g", "desc": "Quatre œufs par adulte, feu doux, on retire la poêle avant que ce soit sec. Pain complet et un fruit.", "enfant": "Un œuf, une tartine beurrée, un fruit. Les œufs brouillés passent très bien à cet âge."}, {"nom": "Assiette froide", "temps": "4 min", "prot": "30 g", "desc": "Fromage blanc, fruits, poignée d'amandes en poudre, tartine de pain complet au jambon ou au fromage.", "enfant": "Tartine, fromage blanc, fruit, verre de lait. Zéro cuisson les matins qui partent en vrille."}, {"nom": "Pancakes protéinés", "temps": "12 min", "prot": "32 g", "desc": "Le format week-end : flocons mixés, œufs, fromage blanc, banane. À la poêle, sans sucre.", "enfant": "Les mêmes, avec un peu de compote ou des fruits rouges écrasés dessus."}], "bkCourses": [["Skyr ou fromage blanc 0 %", "2 kg"], ["Flocons d'avoine", "500 g"], ["Œufs (part petit-déjeuner)", "18"], ["Pain complet", "2 pains"], ["Jambon blanc", "1 paquet (8 tranches)"], ["Lait demi-écrémé", "2 L"], ["Bananes", "7"], ["Fruits de saison", "1 kg"], ["Fruits rouges surgelés", "500 g"], ["Purée d'amande ou de cacahuète 100 %", "1 pot de 200 g"], ["Amandes en poudre", "200 g"]], "gouters": [["Skyr + fruits rouges", "18 g de protéines, 1 minute, zéro préparation."], ["Deux œufs durs + un fruit", "13 g. Cuis-en six d'avance le dimanche soir, ils tiennent une semaine."], ["Tartine pain complet + purée de cacahuète", "12 g. Le goûter que l'enfant réclamera aussi."], ["Fromage blanc + cannelle + amandes en poudre", "20 g. Le plus rassasiant avant une séance."]], "semaines": [{"num": 1, "titre": "On installe le rythme", "intro": "Semaine de calage : des cuissons courtes, des poêles simples, rien qui demande d'anticiper. L'objectif est de prouver que 15 minutes suffisent.", "focus": "Bol express", "repas": [{"nom": "Steak haché & semoule, poêlée méditerranéenne", "cat": "rouge", "temps": 15, "prot": 42, "chrono": [["Semoule", 5], ["Légumes", 8], ["Viande", 4], ["Dressage", 2]], "steps": ["Porter 320 ml d'eau salée à ébullition, verser sur la semoule avec un filet d'huile d'olive, couvrir et laisser gonfler 5 min.", "Poêle très chaude : légumes surgelés + herbes de Provence, à couvert 8 min sans décongeler.", "Deuxième poêle brûlante : steaks 2 min par face, saler après cuisson.", "Égrainer la semoule à la fourchette, ail écrasé dans les légumes en fin de cuisson.", "Gamelles : monter les boîtes tant que c'est chaud, fermer une fois refroidi."], "ingr": [["Steak haché 5 % MG", "800 g"], ["Semoule moyenne", "320 g"], ["Poêlée méditerranéenne surgelée", "800 g"], ["Ail", "3 gousses"], ["Herbes de Provence", "1 c. à s."], ["Huile d'olive", "3 c. à s."]]}, {"nom": "Omelette feta-épinards, pain complet & salade", "cat": "oeufs", "temps": 12, "prot": 34, "chrono": [["Épinards", 6], ["Œufs", 2], ["Cuisson", 5]], "steps": ["Épinards surgelés à la poêle, à couvert 6 min. Découvrir et laisser l'eau s'évaporer complètement.", "Battre les œufs, sel et poivre généreux.", "Verser sur les épinards, parsemer la feta émiettée.", "Couvrir, feu doux 5 min : l'omelette prend sans se retourner.", "Salade à la vinaigrette huile d'olive-moutarde, pain complet à côté."], "ingr": [["Œufs", "14"], ["Feta", "200 g"], ["Épinards hachés surgelés", "400 g"], ["Salade verte en sachet", "150 g"], ["Pain complet", "1/2 pain"], ["Moutarde", "1 c. à c."]]}, {"nom": "Dinde à la moutarde, lentilles & tomates cerises", "cat": "blanche", "temps": 15, "prot": 46, "chrono": [["Découpe", 3], ["Dinde", 5], ["Sauce", 3], ["Lentilles", 4]], "steps": ["Escalopes en lanières d'1 cm. Poêle bien chaude, 5 min en remuant peu.", "Ajouter moutarde à l'ancienne, crème et 5 cl d'eau. Mijoter 3 min.", "Deuxième poêle : lentilles égouttées et rincées + tomates cerises coupées en deux, 4 min à feu vif.", "Poivrer les lentilles, ne pas les saler (le bocal l'est déjà)."], "ingr": [["Escalopes de dinde", "800 g"], ["Lentilles vertes cuites (bocal)", "2 × 400 g"], ["Tomates cerises", "400 g"], ["Moutarde à l'ancienne", "3 c. à s."], ["Crème légère 15 %", "15 cl"]]}, {"nom": "Crevettes ail-persil, pâtes complètes & courgettes", "cat": "mer", "temps": 15, "prot": 40, "chrono": [["Eau", 4], ["Courgettes", 7], ["Crevettes", 4]], "steps": ["Grande casserole d'eau salée, pâtes selon le paquet.", "Courgettes en rondelles fines, poêle huile d'olive, feu vif 7 min.", "Ajouter les crevettes encore surgelées et l'ail haché, 4 min jusqu'à ce qu'elles soient roses.", "Hors du feu : persil ciselé et jus de citron. Mélanger aux pâtes égouttées."], "ingr": [["Crevettes crues décortiquées surgelées", "800 g"], ["Pâtes complètes", "360 g"], ["Courgettes", "3 (600 g)"], ["Ail", "4 gousses"], ["Persil frais", "1 botte"], ["Citron", "1"]]}, {"nom": "Truite poêlée, riz basmati & brocolis", "cat": "poisson", "temps": 18, "prot": 40, "chrono": [["Riz", 10], ["Brocolis", 8], ["Truite", 7]], "steps": ["Riz basmati, 10 min à couvert.", "Brocolis surgelés à la poêle avec 3 c. à s. d'eau, à couvert 8 min.", "Truite peau vers le bas dans une poêle chaude SANS matière grasse : 5 min sans y toucher.", "Retourner 2 min. La peau doit être croustillante.", "Aneth et citron au moment de servir."], "ingr": [["Pavés de truite avec peau", "5 (750 g)"], ["Riz basmati", "320 g"], ["Brocolis surgelés", "700 g"], ["Citron", "1"], ["Aneth", "1 petite botte"]]}, {"nom": "Poulet curry-coco léger & riz", "cat": "blanche", "temps": 20, "prot": 42, "chrono": [["Riz", 10], ["Légumes", 5], ["Poulet", 6], ["Sauce", 6]], "steps": ["Lancer le riz.", "Oignon émincé et poivron en lanières, 5 min à feu vif.", "Poulet en dés de 2 cm, 6 min jusqu'à coloration.", "Curry 1 min à sec pour le réveiller, puis lait de coco. Mijoter 6 min.", "Version enfant : prélever avant d'ajouter le curry, il aura poulet + riz nature."], "ingr": [["Blancs de poulet", "800 g"], ["Riz basmati", "320 g"], ["Lait de coco léger", "40 cl"], ["Curry doux", "2 c. à s."], ["Oignon", "1"], ["Poivron rouge", "1"]]}, {"nom": "Cabillaud au four, patate douce & haricots verts", "cat": "poisson", "temps": 25, "prot": 36, "chrono": [["Four", 20], ["Poisson", 12], ["Haricots", 8]], "steps": ["Four à 200 °C. Patates douces en dés de 2 cm, huile d'olive + paprika, sur plaque 20 min.", "À mi-cuisson, pousser les dés sur un côté et poser les dos de cabillaud sur la plaque.", "Haricots verts à la poêle à couvert, 8 min.", "Citron sur le poisson à la sortie du four."], "ingr": [["Dos de cabillaud", "800 g"], ["Patates douces", "900 g"], ["Haricots verts surgelés", "700 g"], ["Paprika", "1 c. à c."], ["Citron", "1"]]}], "gateau": {"nom": "Moelleux chocolat-courgette", "sous": "Personne ne devine la courgette. Elle apporte le moelleux à la place du beurre.", "parts": 8, "prot": 8, "temps": "35 min dont 30 de four", "ingr": [["Courgette râpée et bien essorée", "200 g"], ["Œufs", "4"], ["Poudre d'amande", "100 g"], ["Cacao non sucré", "40 g"], ["Fromage blanc 0 %", "150 g"], ["Levure chimique", "1 sachet"], ["Extrait de vanille", "1 c. à c."], ["Érythritol (facultatif)", "30 g"]], "steps": ["Râper la courgette et l'essorer à fond dans un torchon : c'est l'étape qui décide de la réussite.", "Fouetter œufs, fromage blanc et vanille.", "Incorporer poudre d'amande, cacao et levure.", "Ajouter la courgette, verser dans un moule chemisé.", "180 °C pendant 30 min. Le cœur doit rester légèrement humide."]}, "courses": {"Boucherie & volaille": [["Steak haché 5 % MG", "800 g"], ["Escalopes de dinde", "800 g"], ["Blancs de poulet", "800 g"]], "Poissonnerie": [["Crevettes crues décortiquées (surgelées)", "800 g"], ["Pavés de truite avec peau", "5 (750 g)"], ["Dos de cabillaud", "800 g"]], "Crémerie": [["Œufs", "14"], ["Feta", "200 g"], ["Crème légère 15 %", "15 cl"]], "Surgelés légumes": [["Poêlée méditerranéenne", "800 g"], ["Épinards hachés", "400 g"], ["Brocolis", "700 g"], ["Haricots verts", "700 g"]], "Fruits & légumes": [["Courgettes", "3"], ["Tomates cerises", "400 g"], ["Patates douces", "900 g"], ["Salade verte en sachet", "150 g"], ["Oignon", "1"], ["Poivron rouge", "1"], ["Ail", "1 tête"], ["Citrons", "3"], ["Persil", "1 botte"], ["Aneth", "1 botte"]], "Épicerie": [["Semoule moyenne", "320 g"], ["Pâtes complètes", "360 g"], ["Riz basmati", "640 g"], ["Lentilles vertes cuites (bocal)", "2 × 400 g"], ["Lait de coco léger", "40 cl"], ["Moutarde à l'ancienne", "1 pot"], ["Curry doux", "1 pot"], ["Paprika", "1 pot"], ["Herbes de Provence", "1 pot"], ["Huile d'olive", "1 bouteille"]], "Pour le gâteau": [["Courgette", "1"], ["Œufs", "4"], ["Poudre d'amande", "100 g"], ["Cacao non sucré", "40 g"], ["Fromage blanc 0 %", "150 g"], ["Levure chimique", "1 sachet"], ["Extrait de vanille", "1 flacon"], ["Érythritol (facultatif)", "1 sachet"]]}}, {"num": 2, "titre": "On monte en variété", "intro": "Les mêmes durées, mais on élargit : porc, chili, papillotes. Le four entre en jeu deux fois, uniquement quand il travaille sans toi.", "focus": "Œufs brouillés", "repas": [{"nom": "Boulettes de bœuf à la tomate & coquillettes complètes", "cat": "rouge", "temps": 20, "prot": 42, "chrono": [["Boulettes", 5], ["Cuisson", 6], ["Sauce", 8], ["Pâtes", 9]], "steps": ["Mélanger bœuf haché, œuf, chapelure, ail écrasé, origan, sel. Former des boulettes de la taille d'une noix.", "Poêle chaude, 6 min en les roulant pour les colorer sur toutes les faces.", "Verser la passata, mijoter 8 min à couvert.", "Coquillettes en parallèle. Parmesan râpé au service."], "ingr": [["Bœuf haché 5 % MG", "800 g"], ["Œuf", "1"], ["Chapelure", "40 g"], ["Coquillettes complètes", "360 g"], ["Passata de tomate", "700 g"], ["Parmesan", "60 g"], ["Ail", "2 gousses"], ["Origan", "1 c. à c."]]}, {"nom": "Poulet citron-thym, quinoa & poêlée de légumes", "cat": "blanche", "temps": 18, "prot": 44, "chrono": [["Quinoa", 12], ["Poulet", 8], ["Légumes", 8]], "steps": ["Quinoa 12 min dans deux fois son volume d'eau salée.", "Poulet en aiguillettes, poêle chaude 8 min. Saler en fin de cuisson.", "Jus de citron + thym + un fond d'eau en déglaçage, 1 min.", "Poêlée de légumes surgelés à côté, 8 min à couvert."], "ingr": [["Blancs de poulet", "800 g"], ["Quinoa", "320 g"], ["Poêlée de légumes surgelée", "800 g"], ["Citron", "2"], ["Thym", "quelques branches"]]}, {"nom": "Colin poêlé, purée maison & épinards", "cat": "poisson", "temps": 20, "prot": 36, "chrono": [["Pommes de terre", 15], ["Épinards", 7], ["Colin", 8]], "steps": ["Pommes de terre en petits cubes (cuisson deux fois plus rapide), 15 min à l'eau bouillante salée.", "Épinards surgelés à la poêle 7 min, égoutter.", "Colin fariné légèrement, poêle chaude 4 min par face.", "Écraser les pommes de terre avec le lait chaud et une noisette de beurre."], "ingr": [["Filets de colin", "800 g"], ["Pommes de terre", "900 g"], ["Épinards en branches surgelés", "600 g"], ["Lait", "15 cl"], ["Beurre", "20 g"], ["Farine", "2 c. à s."], ["Citron", "1"]]}, {"nom": "Frittata jambon-parmesan-courgette & salade", "cat": "oeufs", "temps": 18, "prot": 34, "chrono": [["Courgettes", 6], ["Œufs", 3], ["Cuisson", 9]], "steps": ["Courgettes en fines rondelles, poêle 6 min.", "Battre les œufs avec le parmesan râpé, ajouter le jambon en dés.", "Verser sur les courgettes, feu doux à couvert 9 min.", "Se mange chaude ou froide : la gamelle du lendemain est meilleure que le plat du soir."], "ingr": [["Œufs", "14"], ["Jambon blanc", "200 g"], ["Parmesan", "80 g"], ["Courgettes", "2 (400 g)"], ["Salade verte", "150 g"]]}, {"nom": "Médaillons de filet mignon, riz & champignons", "cat": "blanche", "temps": 20, "prot": 42, "chrono": [["Riz", 10], ["Champignons", 7], ["Porc", 10]], "steps": ["Riz en route.", "Filet mignon en médaillons de 2 cm. Poêle très chaude, 4 min par face.", "Réserver la viande, jeter les champignons émincés dans la même poêle, 7 min.", "Crème + ail + persil, remettre la viande 2 min. Ne pas prolonger : le porc sèche vite."], "ingr": [["Filet mignon de porc", "900 g"], ["Riz basmati", "320 g"], ["Champignons de Paris", "500 g"], ["Crème légère 15 %", "15 cl"], ["Ail", "2 gousses"], ["Persil", "1/2 botte"]]}, {"nom": "Chili express & riz", "cat": "rouge", "temps": 20, "prot": 44, "chrono": [["Légumes", 5], ["Viande", 6], ["Mijotage", 9], ["Riz", 10]], "steps": ["Oignon et poivron en dés, 5 min.", "Bœuf haché, écraser à la spatule, 6 min.", "Cumin et paprika 1 min, puis passata et haricots rouges égouttés. Mijoter 9 min.", "Part enfant à prélever avant d'ajouter les épices si tu le sais sensible."], "ingr": [["Bœuf haché 5 % MG", "800 g"], ["Haricots rouges", "2 × 400 g"], ["Passata de tomate", "400 g"], ["Riz basmati", "320 g"], ["Poivron", "1"], ["Oignon", "1"], ["Cumin + paprika", "1 c. à c. chacun"]]}, {"nom": "Papillotes de truite, semoule & légumes", "cat": "poisson", "temps": 22, "prot": 38, "chrono": [["Montage", 7], ["Four", 15], ["Semoule", 5]], "steps": ["Four à 200 °C. Sur chaque feuille de papier cuisson : rondelles de courgette et carotte râpée en lit.", "Poser le pavé de truite dessus, une rondelle de citron, aneth, filet d'huile.", "Fermer hermétiquement, 15 min au four.", "Semoule gonflée pendant ce temps. Ouvrir les papillotes à table, l'enfant adore."], "ingr": [["Pavés de truite", "5 (750 g)"], ["Semoule moyenne", "320 g"], ["Courgette", "2"], ["Carotte", "3"], ["Citron", "2"], ["Aneth", "1 botte"]]}], "gateau": {"nom": "Cheesecake au skyr, vanille-citron", "sous": "Sans pâte, sans sucre, sans beurre. Trois ingrédients principaux et 40 min de four qui travaillent seuls.", "parts": 8, "prot": 9, "temps": "45 min dont 40 de four", "ingr": [["Skyr nature", "500 g"], ["Œufs", "3"], ["Maïzena", "30 g"], ["Zeste de citron", "1 citron"], ["Extrait de vanille", "1 c. à c."], ["Érythritol (facultatif)", "40 g"]], "steps": ["Fouetter le skyr et les œufs jusqu'à obtenir un appareil parfaitement lisse.", "Ajouter maïzena, zeste et vanille.", "Verser dans un moule à charnière chemisé.", "160 °C pendant 40 min. Il doit encore trembloter au centre.", "Laisser refroidir dans le four éteint, porte entrouverte, pour éviter qu'il ne craquelle. Frigo 3 h."]}, "courses": {"Boucherie & volaille": [["Bœuf haché 5 % MG", "1,6 kg"], ["Blancs de poulet", "800 g"], ["Filet mignon de porc", "900 g"], ["Jambon blanc", "200 g"]], "Poissonnerie": [["Filets de colin", "800 g"], ["Pavés de truite", "5 (750 g)"]], "Crémerie": [["Œufs", "15"], ["Parmesan", "140 g"], ["Crème légère 15 %", "15 cl"], ["Beurre", "1 plaquette"]], "Surgelés légumes": [["Poêlée de légumes", "800 g"], ["Épinards en branches", "600 g"]], "Fruits & légumes": [["Pommes de terre", "900 g"], ["Courgettes", "4"], ["Carottes", "3"], ["Champignons de Paris", "500 g"], ["Poivron", "1"], ["Oignons", "2"], ["Citrons", "5"], ["Salade verte", "150 g"], ["Ail", "1 tête"], ["Aneth", "1 botte"], ["Persil", "1/2 botte"], ["Thym", "1 bouquet"]], "Épicerie": [["Coquillettes complètes", "360 g"], ["Quinoa", "320 g"], ["Riz basmati", "320 g"], ["Semoule moyenne", "320 g"], ["Passata de tomate", "1,1 kg"], ["Haricots rouges", "2 × 400 g"], ["Chapelure", "1 paquet"], ["Farine", "1 paquet"], ["Cumin", "1 pot"], ["Origan", "1 pot"]], "Pour le gâteau": [["Skyr nature", "500 g"], ["Œufs", "3"], ["Maïzena", "1 paquet"], ["Citron", "1"], ["Érythritol (facultatif)", "1 sachet"]]}}, {"num": 3, "titre": "Le cap des habitudes", "intro": "C'est la semaine où on décroche, en général. Donc : des plats plus plaisir (burgers, wok, shakshuka) sans rien lâcher sur les protéines.", "focus": "Assiette froide", "repas": [{"nom": "Émincé de dinde crème-moutarde & tagliatelles", "cat": "blanche", "temps": 15, "prot": 45, "chrono": [["Pâtes", 8], ["Dinde", 6], ["Sauce", 4]], "steps": ["Tagliatelles à l'eau bouillante salée.", "Dinde en lanières, poêle très chaude 6 min.", "Fromage blanc + moutarde + un peu d'eau de cuisson des pâtes hors du feu : la sauce reste crémeuse sans grainer.", "Ne jamais faire bouillir le fromage blanc, il tranche."], "ingr": [["Escalopes de dinde", "800 g"], ["Tagliatelles complètes", "360 g"], ["Fromage blanc 0 %", "250 g"], ["Moutarde", "2 c. à s."], ["Ciboulette", "1 botte"]]}, {"nom": "Dorade à la plancha, boulgour & ratatouille", "cat": "poisson", "temps": 18, "prot": 42, "chrono": [["Boulgour", 12], ["Ratatouille", 10], ["Dorade", 4]], "steps": ["Boulgour 12 min à l'eau bouillante salée.", "Ratatouille à réchauffer à la poêle, 10 min à feu moyen pour la réduire un peu.", "Filets de dorade : poêle fumante, 2 à 3 min par face. La chair doit rester nacrée.", "Fleur de sel et huile d'olive crue à la sortie."], "ingr": [["Filets de dorade", "800 g"], ["Boulgour", "320 g"], ["Ratatouille (bocal ou surgelée)", "800 g"], ["Huile d'olive", "3 c. à s."]]}, {"nom": "Shakshuka & pain complet", "cat": "oeufs", "temps": 20, "prot": 32, "chrono": [["Poivrons", 7], ["Sauce", 6], ["Œufs", 7]], "steps": ["Poivrons et oignon en lanières, 7 min à feu vif.", "Passata, cumin, paprika, sel. Réduire 6 min.", "Creuser des puits à la cuillère, casser un œuf dans chacun.", "Couvrir, feu doux 7 min : le blanc prend, le jaune reste coulant.", "Feta émiettée et pain complet pour saucer."], "ingr": [["Œufs", "12"], ["Passata de tomate", "700 g"], ["Poivrons", "3"], ["Oignon", "1"], ["Feta", "150 g"], ["Cumin", "1 c. à c."], ["Pain complet", "1/2 pain"]]}, {"nom": "Poulet paprika-yaourt, riz & poivrons", "cat": "blanche", "temps": 20, "prot": 44, "chrono": [["Riz", 10], ["Poivrons", 6], ["Poulet", 8], ["Sauce", 3]], "steps": ["Riz en route.", "Poivrons en lanières, 6 min à feu vif.", "Poulet en dés + paprika fumé, 8 min.", "Hors du feu : yaourt grec, sel, un trait de citron. La sauce doit napper, pas bouillir."], "ingr": [["Blancs de poulet", "800 g"], ["Riz basmati", "320 g"], ["Yaourt grec", "300 g"], ["Poivrons", "3"], ["Paprika fumé", "2 c. à c."], ["Citron", "1"]]}, {"nom": "Wok de crevettes, riz & petits pois", "cat": "mer", "temps": 18, "prot": 38, "chrono": [["Riz", 10], ["Œufs", 3], ["Wok", 8]], "steps": ["Riz cuit et refroidi rapidement (passe-le sous l'eau froide, il sautera mieux).", "Brouiller les œufs à part, réserver.", "Wok brûlant : crevettes et gingembre râpé 4 min, puis petits pois 2 min.", "Ajouter riz et œufs, sauter 2 min. Assaisonner au citron vert et au poivre — pas de sauce soja."], "ingr": [["Crevettes crues décortiquées", "700 g"], ["Riz basmati", "320 g"], ["Petits pois surgelés", "400 g"], ["Œufs", "3"], ["Gingembre frais", "1 morceau"], ["Citron vert", "1"]]}, {"nom": "Burgers maison, frites de patate douce & crudités", "cat": "rouge", "temps": 25, "prot": 44, "chrono": [["Four", 22], ["Steaks", 5], ["Montage", 4]], "steps": ["Four à 210 °C. Patates douces en bâtonnets, huile + paprika, 22 min en les retournant à mi-parcours.", "Steaks hachés façonnés à la main, poêle brûlante 2 min par face.", "Cheddar sur le steak en fin de cuisson, couvrir 30 s pour le faire fondre.", "Pains toastés, tomate, salade, oignon rouge. Sauce : fromage blanc + moutarde + ciboulette."], "ingr": [["Bœuf haché 5 % MG", "800 g"], ["Pains à burger complets", "5"], ["Cheddar en tranches", "5"], ["Patates douces", "900 g"], ["Tomate", "2"], ["Salade", "quelques feuilles"], ["Oignon rouge", "1"]]}, {"nom": "Cabillaud crème-citron, pommes de terre & haricots verts", "cat": "poisson", "temps": 22, "prot": 36, "chrono": [["Pommes de terre", 18], ["Haricots", 8], ["Poisson", 8]], "steps": ["Pommes de terre en quartiers, cuisson vapeur ou eau bouillante 18 min.", "Haricots verts surgelés à la poêle à couvert, 8 min.", "Cabillaud dans une poêle avec crème, jus de citron et zeste, à couvert 8 min à feu doux.", "Le poisson est prêt quand la chair se détache en lamelles sous la fourchette."], "ingr": [["Dos de cabillaud", "800 g"], ["Pommes de terre", "900 g"], ["Haricots verts surgelés", "700 g"], ["Crème légère 15 %", "20 cl"], ["Citron", "2"], ["Ciboulette", "1 botte"]]}], "gateau": {"nom": "Cookies avoine-cacahuète", "sous": "Aucun sucre ajouté : toute la douceur vient de la banane. Douze minutes de four, ils tiennent cinq jours.", "parts": 12, "prot": 7, "temps": "20 min dont 12 de four", "ingr": [["Flocons d'avoine", "150 g"], ["Purée de cacahuète 100 %", "120 g"], ["Œufs", "2"], ["Banane très mûre", "1"], ["Cannelle", "1 c. à c."], ["Pincée de sel", "1"]], "steps": ["Écraser la banane à la fourchette jusqu'à obtenir une purée lisse.", "Mélanger avec la purée de cacahuète et les œufs.", "Ajouter flocons, cannelle et sel. La pâte doit être collante, c'est normal.", "Former 12 tas à la cuillère sur une plaque, aplatir légèrement.", "180 °C pendant 12 min. Ils durcissent en refroidissant, ne les sur-cuis pas."]}, "courses": {"Boucherie & volaille": [["Escalopes de dinde", "800 g"], ["Blancs de poulet", "800 g"], ["Bœuf haché 5 % MG", "800 g"]], "Poissonnerie": [["Filets de dorade", "800 g"], ["Crevettes crues décortiquées", "700 g"], ["Dos de cabillaud", "800 g"]], "Crémerie": [["Œufs", "15"], ["Fromage blanc 0 %", "400 g"], ["Yaourt grec", "300 g"], ["Feta", "150 g"], ["Crème légère 15 %", "20 cl"], ["Cheddar en tranches", "5"]], "Surgelés légumes": [["Petits pois", "400 g"], ["Haricots verts", "700 g"]], "Fruits & légumes": [["Poivrons", "6"], ["Oignon", "1"], ["Oignon rouge", "1"], ["Tomates", "2"], ["Patates douces", "900 g"], ["Pommes de terre", "900 g"], ["Salade verte", "1 sachet"], ["Citrons", "3"], ["Citron vert", "1"], ["Gingembre frais", "1 morceau"], ["Ciboulette", "2 bottes"]], "Épicerie": [["Tagliatelles complètes", "360 g"], ["Boulgour", "320 g"], ["Riz basmati", "640 g"], ["Ratatouille (bocal ou surgelée)", "800 g"], ["Passata de tomate", "700 g"], ["Pains à burger complets", "5"], ["Paprika fumé", "1 pot"], ["Moutarde", "1 pot"]], "Pour le gâteau": [["Flocons d'avoine", "150 g"], ["Purée de cacahuète 100 %", "120 g"], ["Œufs", "2"], ["Banane très mûre", "1"], ["Cannelle", "1 pot"]]}}, {"num": 4, "titre": "Le rythme de croisière", "intro": "Les plats que tu garderas après le mois d'essai. Bolognaise, gratin, tortilla : de quoi tenir sans y penser.", "focus": "Pancakes protéinés", "repas": [{"nom": "Sauté de dinde aux poivrons & semoule", "cat": "blanche", "temps": 18, "prot": 44, "chrono": [["Légumes", 7], ["Dinde", 8], ["Semoule", 5]], "steps": ["Poivrons et oignon en lanières, feu vif 7 min pour les colorer.", "Dinde en lanières, 8 min.", "Paprika, ail, un trait de vinaigre balsamique pour laquer.", "Semoule gonflée à côté avec un filet d'huile d'olive."], "ingr": [["Escalopes de dinde", "800 g"], ["Semoule moyenne", "320 g"], ["Poivrons (rouge + jaune)", "3"], ["Oignon", "1"], ["Paprika", "1 c. à c."], ["Vinaigre balsamique", "1 c. à s."]]}, {"nom": "Pâtes au colin émietté, tomate & parmesan", "cat": "poisson", "temps": 15, "prot": 38, "chrono": [["Pâtes", 9], ["Sauce", 8], ["Colin", 5]], "steps": ["Pâtes à l'eau bouillante salée.", "Ail haché dans l'huile d'olive 1 min, puis passata, 6 min de réduction.", "Poser les morceaux de colin dans la sauce, couvrir 5 min, puis émietter à la fourchette avec les câpres.", "Mélanger aux pâtes avec une louche d'eau de cuisson, parmesan au service."], "ingr": [["Filets de colin", "700 g"], ["Pâtes complètes", "360 g"], ["Passata de tomate", "500 g"], ["Parmesan", "60 g"], ["Câpres", "2 c. à s."], ["Ail", "3 gousses"]]}, {"nom": "Tortilla jambon & pomme de terre, salade", "cat": "oeufs", "temps": 22, "prot": 34, "chrono": [["Pommes de terre", 12], ["Montage", 3], ["Cuisson", 10]], "steps": ["Pommes de terre en fines rondelles, poêle à couvert avec l'oignon, 12 min.", "Battre les œufs, ajouter le jambon en dés, saler.", "Verser sur les pommes de terre, feu doux à couvert 10 min.", "Se mange tiède ou froide. La part de midi passe très bien en gamelle sans réchauffage."], "ingr": [["Œufs", "14"], ["Pommes de terre", "600 g"], ["Jambon blanc", "200 g"], ["Oignon", "1"], ["Salade verte", "150 g"]]}, {"nom": "Poulet grillé, lentilles & carottes fondantes", "cat": "blanche", "temps": 22, "prot": 45, "chrono": [["Carottes", 12], ["Poulet", 12], ["Lentilles", 5]], "steps": ["Carottes en rondelles, poêle à couvert avec un fond d'eau, 12 min.", "Cuisses de poulet désossées côté peau en premier, poêle chaude 8 min, puis 4 min de l'autre côté.", "Lentilles égouttées ajoutées aux carottes, thym, 5 min.", "Déglacer la poêle du poulet avec un peu d'eau et verser ce jus sur les lentilles."], "ingr": [["Cuisses de poulet désossées", "900 g"], ["Lentilles vertes cuites (bocal)", "2 × 400 g"], ["Carottes", "5 (500 g)"], ["Thym", "quelques branches"]]}, {"nom": "Truite miel-moutarde au four, riz & brocolis", "cat": "poisson", "temps": 22, "prot": 40, "chrono": [["Four", 14], ["Riz", 10], ["Brocolis", 8]], "steps": ["Four à 200 °C. Mélanger miel, moutarde et un trait de citron.", "Badigeonner les pavés, 14 min au four sur papier cuisson.", "Riz et brocolis pendant ce temps.", "Arroser le poisson de son jus de plaque au moment de servir."], "ingr": [["Pavés de truite", "5 (750 g)"], ["Riz basmati", "320 g"], ["Brocolis surgelés", "700 g"], ["Miel", "2 c. à s."], ["Moutarde", "2 c. à s."], ["Citron", "1"]]}, {"nom": "Bolognaise maison & spaghetti complets", "cat": "rouge", "temps": 25, "prot": 42, "chrono": [["Légumes", 6], ["Viande", 6], ["Mijotage", 13], ["Pâtes", 9]], "steps": ["Oignon et carotte en tout petits dés, 6 min.", "Bœuf haché, écraser à la spatule, 6 min à feu vif.", "Passata, ail, origan, laurier. Mijoter 13 min à découvert.", "Spaghetti al dente, parmesan au service. La sauce est encore meilleure réchauffée le lendemain."], "ingr": [["Bœuf haché 5 % MG", "800 g"], ["Spaghetti complets", "360 g"], ["Passata de tomate", "700 g"], ["Carotte", "2"], ["Oignon", "1"], ["Parmesan", "60 g"], ["Origan + laurier", "1 c. à c. + 1 feuille"]]}, {"nom": "Gratin de poisson blanc, épinards & pommes de terre", "cat": "poisson", "temps": 30, "prot": 36, "chrono": [["Pommes de terre", 15], ["Montage", 5], ["Four", 20]], "steps": ["Pommes de terre en rondelles, précuites 15 min à l'eau bouillante.", "Épinards surgelés poêlés 7 min, bien égouttés.", "Dans un plat : pommes de terre, épinards, poisson en morceaux, crème citronnée, emmental.", "200 °C pendant 20 min. Le seul plat du mois où le four fait vraiment le travail."], "ingr": [["Filets de colin ou cabillaud", "800 g"], ["Pommes de terre", "800 g"], ["Épinards en branches surgelés", "600 g"], ["Crème légère 15 %", "20 cl"], ["Emmental râpé", "80 g"], ["Citron", "1"], ["Muscade", "1 pincée"]]}], "gateau": {"nom": "Muffins pomme-cannelle", "sous": "Aucun sucre ajouté : compote sans sucres ajoutés et dés de pomme font tout le travail.", "parts": 10, "prot": 8, "temps": "30 min dont 22 de four", "ingr": [["Compote sans sucres ajoutés", "200 g"], ["Œufs", "3"], ["Flocons d'avoine mixés", "100 g"], ["Fromage blanc 0 %", "150 g"], ["Poudre d'amande", "60 g"], ["Levure chimique", "1 sachet"], ["Cannelle", "2 c. à c."], ["Pomme en petits dés", "1"]], "steps": ["Mixer les flocons d'avoine en farine grossière.", "Fouetter œufs, compote et fromage blanc.", "Ajouter flocons mixés, poudre d'amande, levure et cannelle.", "Incorporer les dés de pomme, répartir dans 10 caissettes.", "180 °C pendant 22 min. Pointe de couteau sèche = c'est cuit."]}, "courses": {"Boucherie & volaille": [["Escalopes de dinde", "800 g"], ["Cuisses de poulet désossées", "900 g"], ["Bœuf haché 5 % MG", "800 g"], ["Jambon blanc", "200 g"]], "Poissonnerie": [["Filets de colin", "700 g"], ["Pavés de truite", "5 (750 g)"], ["Filets de colin ou cabillaud", "800 g"]], "Crémerie": [["Œufs", "14"], ["Parmesan", "60 g"], ["Emmental râpé", "80 g"], ["Crème légère 15 %", "20 cl"]], "Surgelés légumes": [["Brocolis", "700 g"], ["Épinards en branches", "600 g"]], "Fruits & légumes": [["Poivrons", "3"], ["Oignons", "3"], ["Carottes", "7"], ["Pommes de terre", "1,4 kg"], ["Salade verte", "150 g"], ["Citrons", "2"], ["Ail", "1 tête"], ["Thym + laurier", "1 bouquet"]], "Épicerie": [["Semoule moyenne", "320 g"], ["Pâtes complètes", "360 g"], ["Spaghetti complets", "360 g"], ["Riz basmati", "320 g"], ["Passata de tomate", "1,2 kg"], ["Lentilles vertes cuites (bocal)", "2 × 400 g"], ["Câpres", "1 bocal"], ["Miel", "1 pot"], ["Vinaigre balsamique", "1 bouteille"], ["Muscade", "1 pot"]], "Pour le gâteau": [["Compote sans sucres ajoutés", "200 g"], ["Œufs", "3"], ["Flocons d'avoine", "100 g"], ["Fromage blanc 0 %", "150 g"], ["Poudre d'amande", "60 g"], ["Levure chimique", "1 sachet"], ["Pomme", "1"]]}}]};
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
@@ -262,7 +468,9 @@ const state={
   checks:Store.get('mn.checks',{}), cooked:Store.get('mn.cooked',{}),
 };
 const S=()=>D.semaines.find(x=>x.num===state.week);
-const cvars=c=>{const k=D.cats[c];return `--cbg:${k.bg};--cink:${k.ink};--crule:${k.rule};--cchip:${k.chip}`};
+const EMO={poisson:'🐟',mer:'🦐',blanche:'🍗',rouge:'🥩',oeufs:'🥚'};
+const cvars=c=>{const k=D.cats[c];
+  return `--cbg:${k.bg};--cink:${k.ink};--crule:${k.rule};--cchip:${k.chip};--emo:'${EMO[c]||'🍽️'}'`};
 const todayIdx=()=>(new Date().getDay()+6)%7;
 const cookId=(w,i)=>`s${w}.cook|${i}`;
 const isCooked=(w,i)=>!!state.cooked[cookId(w,i)];
@@ -270,6 +478,37 @@ const cookCount=w=>D.jours.reduce((a,_,i)=>a+(isCooked(w,i)?1:0),0);
 const save=()=>{Store.set('mn.checks',state.checks);Store.set('mn.cooked',state.cooked)};
 
 const CHK='<svg viewBox="0 0 24 24"><path d="M4 12.5l5.5 5.5L20 7"/></svg>';
+
+/* ---------------- navs ---------------- */
+const ICONS={
+  diners:'<svg viewBox="0 0 24 24"><path d="M7 3v8a2 2 0 004 0V3M9 11v10"/><path d="M17 3c-1.5 2-2 4-2 6s.7 2 2 2 2-.5 2-2V3"/><path d="M17 11v10"/></svg>',
+  matin:'<svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="3.5"/><path d="M12 5.5V3M18 13h2.5M3.5 13H6M16.2 8.8l1.7-1.7M6.1 7.1l1.7 1.7M16.2 17.2l1.7 1.7M6.1 18.9l1.7-1.7"/></svg>',
+  gouter:'<svg viewBox="0 0 24 24"><path d="M4 20h16M5 20v-5a7 7 0 0114 0v5"/><path d="M9 6c0-1 1-1.4 1-2.4M13 6c0-1 1-1.4 1-2.4"/></svg>',
+  courses:'<svg viewBox="0 0 24 24"><path d="M3 4h2l2.2 11.2a2 2 0 002 1.6h7.7a2 2 0 002-1.6L20.5 8H6"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg>',
+  mois:'<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>'};
+const TABS=[['diners','Dîners','bcook'],['matin','Matin',''],['gouter','Goûter',''],
+  ['courses','Courses','bshop'],['mois','Le mois','']];
+function buildNavs(){
+  const h=TABS.map(([k,l,b])=>`<button data-tab="${k}">${ICONS[k]}<span class="t">${l}</span>${
+    b?`<span class="badge ${b}"></span>`:''}</button>`).join('');
+  $('.dnav').innerHTML=h;$('.mnav').innerHTML=h;
+}
+
+/* ---------------- confetti ---------------- */
+function burst(){
+  const c=document.createElement('div');c.className='confetti';
+  const colors=['#F4633C','#FFC64B','#3E9E63','#5FA8DC','#E2599B'];
+  for(let k=0;k<28;k++){const s=document.createElement('i');
+    s.style.setProperty('--x',(Math.random()*100)+'vw');
+    s.style.setProperty('--d',(Math.random()*.45)+'s');
+    s.style.setProperty('--r',(Math.random()*720-360)+'deg');
+    s.style.setProperty('--t',(0.9+Math.random()*0.8)+'s');
+    s.style.background=colors[k%colors.length];
+    if(k%3===0)s.style.borderRadius='50%';
+    c.appendChild(s)}
+  document.body.appendChild(c);
+  setTimeout(()=>c.remove(),1900);
+}
 
 /* ---------------- modal ---------------- */
 let pending=null;
@@ -283,17 +522,20 @@ function closeModal(){$('#modal').hidden=true;pending=null}
 function viewDiners(){
   const s=S(), t=todayIdx(), r=s.repas[t], done=cookCount(s.num);
   let h=`<div class="vhead"><span class="eyebrow">Semaine ${s.num} · ${esc(s.titre)}</span>
-    <h2>Les sept dîners</h2><p>${esc(s.intro)}</p></div>
+    <h2><u>Les sept dîners</u> 🍽️</h2><p>${esc(s.intro)}</p></div>
     <div class="prow"><span class="c">${done} / 7 cuisinés</span>
       <span class="track g"><i style="width:${done/7*100}%"></i></span>
+      ${done===7?'<span class="fete">Semaine complète 🎉</span>':''}
       <button class="rst" data-resetcook ${done?'':'disabled'}>Réinitialiser</button></div>
     <button class="tonight${isCooked(s.num,t)?' done':''}" data-jump="${t}">
-      <span class="k">Ce soir · ${esc(D.jours[t])}${isCooked(s.num,t)?' · déjà cuisiné':''}</span>
+      <span class="k">Ce soir · ${esc(D.jours[t])}${isCooked(s.num,t)?' · déjà cuisiné ✓':''}</span>
       <span class="n">${esc(r.nom)}</span>
-      <span class="m">${r.temps} min · ${r.prot} g de protéines par adulte</span></button>`;
+      <span class="m">${r.temps} min · ${r.prot} g de protéines par adulte</span>
+      <span class="go">Voir la recette ↓</span>
+      <img class="ph" src="menus-img/s${s.num}-j${t+1}.jpg" alt="" loading="lazy" onerror="this.remove()"></button>`;
   h+=s.repas.map((r,i)=>dayCard(r,i,i===t)).join('');
   h+=`<div class="legend">`+['poisson','mer','blanche','rouge','oeufs'].map(k=>
-    `<span style="background:${D.cats[k].bg};color:${D.cats[k].ink}">${esc(D.cats[k].label)}</span>`).join('')+`</div>
+    `<span style="background:${D.cats[k].bg};color:${D.cats[k].ink}">${EMO[k]} ${esc(D.cats[k].label)}</span>`).join('')+`</div>
     <p class="note">Quantités calibrées pour 3 personnes le soir et 2 gamelles le lendemain midi,
     soit 4,5 parts adulte. L'enfant compte pour une demi-part.</p>`;
   return h;
@@ -304,24 +546,25 @@ function dayCard(r,i,now){
   const bars=r.chrono.map(([l,m])=>`<div class="bar" style="flex:${m};--w:${(m/tot*100).toFixed(1)}%"><b>${esc(l)}</b><i>${m} min</i></div>`).join('');
   const par=tot>r.temps?`<p class="par">Plusieurs postes tournent en même temps : ${tot} min cumulées pour ${r.temps} min réelles.</p>`:'';
   return `<article class="day${now?' now':''}${done?' done':''}" style="${cvars(r.cat)}" data-open="0" data-i="${i}">
-    <div class="dhead"><span class="dbar"></span>
+    <div class="dhead">
       <button class="dtoggle" data-toggle="${i}" aria-expanded="false">
+        <span class="dthumb"><img src="menus-img/s${state.week}-j${i+1}.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
         <span class="dmain">
           <span class="drow"><span class="dday">${esc(D.jours[i])}</span>
-            <span class="dtag">${esc(c.label)}</span><span class="dok">Cuisiné</span></span>
+            <span class="dtag">${EMO[r.cat]} ${esc(c.label)}</span><span class="dok">Cuisiné ✓</span></span>
           <span class="dnom">${esc(r.nom)}</span>
-          <span class="dmeta"><i>${r.temps} min</i><i class="p">${r.prot} g de protéines</i></span>
         </span>
         <span class="chev"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+        <span class="dmeta"><i>⏱ ${r.temps} min</i><i class="p">${r.prot} g de protéines</i></span>
       </button>
       <button class="dcook" data-cook="${i}" aria-pressed="${done}"
-        aria-label="${done?'Annuler « cuisiné »':'Marquer comme cuisiné'}">${CHK}<em>${done?'Fait':'Cuisiné'}</em></button>
+        aria-label="${done?'Annuler « cuisiné »':'Marquer comme cuisiné'}"><b>${CHK}</b><em>${done?'Fait !':'Cuisiné ?'}</em></button>
     </div>
     <div class="dpanel">
       <img class="dimg" src="menus-img/s${state.week}-j${i+1}.jpg" alt="${esc(r.nom)}" loading="lazy" onerror="this.remove()">
-      <div class="blk"><h4>Les postes</h4><div class="bars">${bars}</div>${par}</div>
-      <div class="blk"><h4>Le déroulé</h4><ol class="steps">${r.steps.map(x=>`<li>${esc(x)}</li>`).join('')}</ol></div>
-      <div class="blk"><h4>Quantités · 3 le soir + 2 gamelles</h4>
+      <div class="blk b-time"><h4>⏱️ Les postes</h4><div class="bars">${bars}</div>${par}</div>
+      <div class="blk b-steps"><h4>👨‍🍳 Le déroulé</h4><ol class="steps">${r.steps.map(x=>`<li>${esc(x)}</li>`).join('')}</ol></div>
+      <div class="blk b-ingr"><h4>🧾 Quantités · 3 le soir + 2 gamelles</h4>
         <dl class="q">${r.ingr.map(([n,q])=>`<dt>${esc(n)}</dt><dd>${esc(q)}</dd>`).join('')}</dl></div>
       <button class="cookbtn" data-cook="${i}">${CHK}${done?'Cuisiné — annuler':'Marquer comme cuisiné'}</button>
     </div></article>`;
@@ -330,35 +573,36 @@ function dayCard(r,i,now){
 /* ---------------- matin / goûter ---------------- */
 function viewMatin(){
   const s=S();
-  let h=`<div class="vhead"><span class="eyebrow">Semaine ${s.num}</span><h2>Le petit-déjeuner</h2>
+  let h=`<div class="vhead"><span class="eyebrow">Semaine ${s.num}</span><h2><u>Le petit-déjeuner</u> ☀️</h2>
     <p>Une base, quatre formules. Toute la famille mange la même chose : l'enfant a la même
-    assiette en plus petit, avec le sucré qui vient du fruit et jamais du bol.</p></div>`;
+    assiette en plus petit, avec le sucré qui vient du fruit et jamais du bol.</p></div><div class="grid2">`;
   h+=D.breakfasts.map(b=>{const hi=b.nom===s.focus;
-    return `<div class="card${hi?' hi':''}"><span class="eyebrow">${hi?'La formule de la semaine':'Formule'}</span>
+    return `<div class="card${hi?' hi':''}"><span class="eyebrow">${hi?'⭐ La formule de la semaine':'Formule'}</span>
       <h3 style="margin-top:6px">${esc(b.nom)}</h3>
-      <div class="pills"><span>${esc(b.temps)}</span><span>${esc(b.prot)} de protéines</span></div>
+      <div class="pills"><span>⏱ ${esc(b.temps)}</span><span>${esc(b.prot)} de protéines</span></div>
       <p class="sub" style="margin-top:11px">${esc(b.desc)}</p>
-      <div class="kid"><b>Pour l'enfant</b>${esc(b.enfant)}</div></div>`}).join('');
+      <div class="kid"><b>🧒 Pour l'enfant</b>${esc(b.enfant)}</div></div>`}).join('');
+  h+=`</div>`;
   return h;
 }
 function viewGouter(){
   const s=S(), g=s.gateau;
   return `<div class="vhead"><span class="eyebrow">Semaine ${s.num} · zéro sucre ajouté</span>
-    <h2>Le goûter de 16 h</h2></div>
+    <h2><u>Le goûter de 16 h</u> 🍪</h2></div><div class="grid-gouter">
   <div class="card" style="${cvars('oeufs')}">
-    <span class="eyebrow">Gâteau protéiné de la semaine</span>
-    <h3 style="margin:7px 0 5px;font-size:22px">${esc(g.nom)}</h3>
+    <span class="eyebrow">🍰 Gâteau protéiné de la semaine</span>
+    <h3 style="margin:7px 0 5px;font-size:23px">${esc(g.nom)}</h3>
     <p class="sub">${esc(g.sous)}</p>
-    <div class="pills"><span>${esc(g.temps)}</span><span>${g.parts} parts</span><span>${g.prot} g par part</span></div>
-    <div class="blk"><h4>Le déroulé</h4><ol class="steps">${g.steps.map(x=>`<li>${esc(x)}</li>`).join('')}</ol></div>
-    <div class="blk"><h4>Ingrédients</h4><dl class="q">${g.ingr.map(([n,q])=>`<dt>${esc(n)}</dt><dd>${esc(q)}</dd>`).join('')}</dl></div>
+    <div class="pills"><span>⏱ ${esc(g.temps)}</span><span>${g.parts} parts</span><span>${g.prot} g par part</span></div>
+    <div class="blk"><h4>👨‍🍳 Le déroulé</h4><ol class="steps">${g.steps.map(x=>`<li>${esc(x)}</li>`).join('')}</ol></div>
+    <div class="blk"><h4>🧾 Ingrédients</h4><dl class="q">${g.ingr.map(([n,q])=>`<dt>${esc(n)}</dt><dd>${esc(q)}</dd>`).join('')}</dl></div>
   </div>
-  <div class="card"><h3>Si tu n'as pas 30 minutes</h3>
+  <div class="card"><h3>Si tu n'as pas 30 minutes ⏳</h3>
     <p class="sub">Quatre goûters sans cuisson, valables toutes les semaines.</p>
     <dl class="q" style="margin-top:13px;grid-template-columns:1fr">
     ${D.gouters.map(([n,d])=>`<dt style="border:none;padding-bottom:2px"><b>${esc(n)}</b></dt>
-      <dd style="text-align:left;font-family:var(--body);font-size:13.5px;color:var(--muted);white-space:normal;padding-top:0">${esc(d)}</dd>`).join('')}
-    </dl></div>`;
+      <dd style="text-align:left;font-family:var(--body);font-weight:600;font-size:13.5px;color:var(--muted);white-space:normal;padding-top:0">${esc(d)}</dd>`).join('')}
+    </dl></div></div>`;
 }
 
 /* ---------------- courses ---------------- */
@@ -375,22 +619,26 @@ function tally(l){
     items.forEach((_,i)=>{tot++;if(state.checks[`${key}|${ray}|${i}`])done++});
   return{tot,done};
 }
+const RAYEMO=[[/Bouch/i,'🥩'],[/Poissonnerie/i,'🐟'],[/Crémerie/i,'🥛'],[/Surgel/i,'❄️'],
+  [/Fruits/i,'🥕'],[/Épicerie/i,'🫙'],[/gâteau/i,'🍰'],[/petits-déjeuners/i,'☀️']];
+const rayEmo=n=>{for(const [rx,e] of RAYEMO)if(rx.test(n))return e;return '🧺'};
 function viewCourses(){
   const {groups,foot,key}=listData(), {tot,done}=tally();
-  let h=`<div class="shopbar"><div class="segs">
+  let h=`<div class="vhead"><span class="eyebrow">Semaine ${S().num}</span><h2><u>Les courses</u> 🛒</h2></div>
+    <div class="shopbar"><div class="segs">
       <button class="seg" data-list="diners" aria-current="${state.list==='diners'}">Dîners &amp; gamelles</button>
       <button class="seg" data-list="matin" aria-current="${state.list==='matin'}">Petits-déjeuners</button></div>
     <div class="prow"><span class="c" id="cnt">${done} / ${tot}</span>
       <span class="track"><i id="fill" style="width:${tot?done/tot*100:0}%"></i></span>
-      <button class="rst" data-resetshop ${done?'':'disabled'}>Tout décocher</button></div></div>`;
+      <button class="rst" data-resetshop ${done?'':'disabled'}>Tout décocher</button></div></div><div class="rays">`;
   for(const [ray,items] of Object.entries(groups)){
-    h+=`<section class="ray"><h4>${esc(ray)}<em data-raycnt></em></h4>`;
+    h+=`<section class="ray"><h4><span class="emo">${rayEmo(ray)}</span>${esc(ray)}<em data-raycnt></em></h4>`;
     h+=items.map(([n,q],i)=>{const id=`${key}|${ray}|${i}`,on=!!state.checks[id];
       return `<button class="it" data-id="${esc(id)}" aria-pressed="${on}">
         <span class="box">${CHK}</span><span class="nm">${esc(n)}</span><span class="qt">${esc(q)}</span></button>`}).join('');
     h+=`</section>`;
   }
-  h+=`<p class="note">${esc(foot)}</p>`;
+  h+=`</div><p class="note">${esc(foot)}</p>`;
   return h;
 }
 function refreshCounts(){
@@ -408,20 +656,20 @@ function refreshCounts(){
 
 /* ---------------- mois ---------------- */
 function viewMois(){
-  let h=`<div class="vhead"><span class="eyebrow">Vue d'ensemble</span><h2>Vingt-huit dîners</h2>
-    <p>La rotation complète du mois, et ce que tu as déjà cuisiné dans chaque semaine.</p></div>`;
+  let h=`<div class="vhead"><span class="eyebrow">Vue d'ensemble</span><h2><u>Vingt-huit dîners</u> 📅</h2>
+    <p>La rotation complète du mois, et ce que tu as déjà cuisiné dans chaque semaine.</p></div><div class="mgrid">`;
   D.semaines.forEach(s=>{
     const d=cookCount(s.num);
-    h+=`<div class="card" style="padding:16px 15px 14px">
-      <h3 style="font-size:16px">Semaine ${s.num} — ${esc(s.titre)}</h3>
-      <div class="prow" style="margin:11px 0 13px"><span class="c">${d} / 7 cuisinés</span>
-        <span class="track g"><i style="width:${d/7*100}%"></i></span></div>`;
+    h+=`<div class="card" style="padding:17px 16px 15px">
+      <h3 style="font-size:17px">Semaine ${s.num} — ${esc(s.titre)}</h3>
+      <div class="prow" style="margin:11px 0 13px"><span class="c">${d} / 7</span>
+        <span class="track g"><i style="width:${d/7*100}%"></i></span>${d===7?'<span class="fete">🎉</span>':''}</div>`;
     h+=s.repas.map((r,i)=>`<div class="mrow${isCooked(s.num,i)?' done':''}" style="${cvars(r.cat)}">
         <b>${esc(D.jours[i].slice(0,3))}</b><span class="n">${esc(r.nom)}</span>
         <span class="g">${r.prot} g</span></div>`).join('');
-    h+=`<div style="margin-top:11px;font-family:var(--mono);font-size:10.5px;color:var(--muted)">
-      Gâteau : ${esc(s.gateau.nom)}</div></div>`;
+    h+=`<div class="gnote">🍰 Gâteau : ${esc(s.gateau.nom)}</div></div>`;
   });
+  h+=`</div>`;
   return h;
 }
 
@@ -429,10 +677,10 @@ function viewMois(){
 const VIEWS={diners:viewDiners,matin:viewMatin,gouter:viewGouter,courses:viewCourses,mois:viewMois};
 function badges(){
   const shop=tally('diners');
-  const b1=$('#bshop'),left=shop.tot-shop.done;
-  b1.textContent=left;b1.className='badge'+(left?' on':'');
-  const c=cookCount(state.week),b2=$('#bcook');
-  b2.textContent=c===7?'✓':(7-c);b2.className='badge on'+(c===7?' ok':'');
+  const left=shop.tot-shop.done;
+  $$('.bshop').forEach(b=>{b.textContent=left;b.className='badge bshop'+(left?' on':'')});
+  const c=cookCount(state.week);
+  $$('.bcook').forEach(b=>{b.textContent=c===7?'✓':(7-c);b.className='badge bcook on'+(c===7?' ok':'')});
   D.semaines.forEach(s=>{const w=$(`.wk[data-week="${s.num}"]`);
     if(w)w.dataset.full=cookCount(s.num)===7?'1':'0'});
 }
@@ -440,7 +688,7 @@ function render(){
   const s=S();
   $('#wtitle').textContent=state.tab==='mois'?'Le mois entier':s.titre;
   $$('.wk').forEach(b=>b.setAttribute('aria-current',String(+b.dataset.week===state.week)));
-  $$('.nav button[data-tab]').forEach(b=>b.setAttribute('aria-current',String(b.dataset.tab===state.tab)));
+  $$('[data-tab]').forEach(b=>b.setAttribute('aria-current',String(b.dataset.tab===state.tab)));
   $('#view').innerHTML=VIEWS[state.tab]();
   window.scrollTo({top:0});
   if(state.tab==='courses')refreshCounts(); else badges();
@@ -474,22 +722,26 @@ document.addEventListener('click',e=>{
 
   const wk=t.closest('.wk');
   if(wk){state.week=+wk.dataset.week;Store.set('mn.week',state.week);render();return}
-  const nb=t.closest('.nav button[data-tab]');
+  const nb=t.closest('[data-tab]');
   if(nb){state.tab=nb.dataset.tab;render();return}
-  const g=t.closest('#gear');
+  const g=t.closest('.gear');
   if(g){openSettings();return}
   const sg=t.closest('.seg');
   if(sg){state.list=sg.dataset.list;render();return}
 
   const ck=t.closest('[data-cook]');
   if(ck){const i=+ck.dataset.cook,id=cookId(state.week,i);
+    const marking=!state.cooked[id];
     if(state.cooked[id])delete state.cooked[id];else state.cooked[id]=1;
     save();
-    const card=$(`.day[data-i="${i}"]`),was=card.dataset.open;
+    const card=$(`.day[data-i="${i}"]`),was=card?card.dataset.open:'0';
     render();
-    if(was==='1'){const c2=$(`.day[data-i="${i}"]`);c2.dataset.open='1';
+    const c2=$(`.day[data-i="${i}"]`);
+    if(was==='1'&&c2){c2.dataset.open='1';
       $('.dtoggle',c2).setAttribute('aria-expanded','true');
       c2.scrollIntoView({block:'center'})}
+    if(marking&&c2){const dc=$('.dcook',c2);if(dc)dc.classList.add('pop')}
+    if(marking&&cookCount(state.week)===7)burst();
     return}
 
   const rc=t.closest('[data-resetcook]');
@@ -511,7 +763,9 @@ document.addEventListener('click',e=>{
   if(it){const id=it.dataset.id,on=it.getAttribute('aria-pressed')!=='true';
     it.setAttribute('aria-pressed',String(on));
     if(on)state.checks[id]=1;else delete state.checks[id];
-    save();refreshCounts();return}
+    save();refreshCounts();
+    if(on&&$$('.it').length&&$$('.it').every(b=>b.getAttribute('aria-pressed')==='true'))burst();
+    return}
   const tg=t.closest('[data-toggle]');
   if(tg){const card=tg.closest('.day'),open=card.dataset.open==='1';
     card.dataset.open=open?'0':'1';tg.setAttribute('aria-expanded',String(!open));
@@ -527,7 +781,7 @@ function openSettings(){
   const cooked=D.semaines.reduce((a,s)=>a+cookCount(s.num),0);
   const checks=Object.keys(state.checks).length;
   $('#mtitle').textContent='Ma progression';
-  $('#mmsg').innerHTML=`<span class="stat">Sauvegarde automatique : ${Store.ok?'active sur cet appareil':'indisponible dans ce navigateur'}<br>
+  $('#mmsg').innerHTML=`<span class="stat">Sauvegarde automatique : ${Store.ok?'active sur cet appareil ✓':'indisponible dans ce navigateur'}<br>
     ${cooked} repas cuisinés · ${checks} articles cochés</span>`;
   $('#macts').innerHTML=`
     <button class="srow" id="sexp"><svg viewBox="0 0 24 24"><path d="M12 3v12M8 11l4 4 4-4M4 20h16"/></svg>
@@ -537,8 +791,8 @@ function openSettings(){
     <button class="srow danger" id="sall"><svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg>
       <span>Tout remettre à zéro<small>Les 4 semaines et toutes les listes</small></span></button>
     <button class="srow" id="sclose" style="justify-content:center;color:var(--muted);
-      font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-      border-top:1px solid var(--rule);margin-top:6px">Fermer</button>`;
+      font-family:var(--disp);font-weight:700;font-size:13px;
+      border-top:2px dashed var(--line);border-radius:0;margin-top:6px">Fermer</button>`;
   $('#macts').className='';
   $('#modal').hidden=false;pending=null;
   $('#sclose').onclick=closeModal;
@@ -555,6 +809,9 @@ function restoreActs(){
 $('#file').addEventListener('change',e=>{if(e.target.files[0])importState(e.target.files[0]);e.target.value=''});
 const _ask=ask;ask=(...a)=>{restoreActs();_ask(...a)};
 
+buildNavs();
+const h0=(location.hash||'').slice(1);
+if(h0&&Object.prototype.hasOwnProperty.call(VIEWS,h0))state.tab=h0;
 addEventListener('resize',syncTop);syncTop();
 render();
 </script>
